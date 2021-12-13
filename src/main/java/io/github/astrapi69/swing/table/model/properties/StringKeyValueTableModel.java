@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2021 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -22,8 +22,38 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69;
+package io.github.astrapi69.swing.table.model.properties;
 
-public class InitialTemplate
+import io.github.astrapi69.swing.table.model.TableColumnsModel;
+
+/**
+ * The class {@link StringKeyValueTableModel} that lists key value pairs.
+ */
+public class StringKeyValueTableModel extends KeyValueTableModel<String, String>
 {
+
+	/** The Constant serialVersionUID. */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Instantiates a new {@link StringKeyValueTableModel} object.
+	 */
+	public StringKeyValueTableModel()
+	{
+		this(TableColumnsModel.builder().columnNames(new String[] { "Key", "Value" })
+			.canEdit(new boolean[] { false, false })
+			.columnClasses(new Class<?>[] { String.class, String.class }).build());
+	}
+
+	/**
+	 * Instantiates a new {@link StringKeyValueTableModel} object.
+	 *
+	 * @param columnsModel
+	 *            the columns model
+	 */
+	public StringKeyValueTableModel(final TableColumnsModel columnsModel)
+	{
+		super(columnsModel);
+	}
+
 }
