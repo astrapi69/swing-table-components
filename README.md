@@ -12,7 +12,7 @@
 
 </div>
 
-This project holds a table components for swing applications. 
+This repository provides table components like JXTable and ShuffleTable for swing applications. 
 
 > Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/astrapi69/swing-table-components" data-icon="octicon-star" aria-label="Star astrapi69/swing-table-components on GitHub">Star ⭐</a>
