@@ -22,58 +22,63 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.swing.table.model.properties;
+package io.github.astrapi69.swing.table.shuffle.panel;
 
-import io.github.astrapi69.collections.pairs.KeyValuePair;
-import io.github.astrapi69.swing.table.model.BaseTableModel;
-import io.github.astrapi69.swing.table.model.TableColumnsModel;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * The class {@link KeyValueTableModel} that lists key value pairs.
- */
-public class KeyValueTableModel<K, V> extends BaseTableModel<KeyValuePair<K, V>>
+import javax.swing.*;
+
+import io.github.astrapi69.swing.table.GenericJXTable;
+import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
+import lombok.Getter;
+import lombok.Setter;
+
+import org.jdesktop.swingx.JXButton;
+import org.jdesktop.swingx.JXLabel;
+
+import io.github.astrapi69.model.GenericModel;
+import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.swing.base.BasePanel;
+
+@Getter
+@Setter
+public class ShuffleTablePanel<T> extends BasePanel<List<T>>
 {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Instantiates a new {@link KeyValueTableModel} object.
-	 */
-	public KeyValueTableModel()
+	protected JXButton btnAdd;
+
+	protected JXButton btnAddAll;
+
+	protected JXButton btnRemove;
+
+	protected JXButton btnRemoveAll;
+
+	protected JXLabel lblAvailableElements;
+
+	protected JXLabel lblSelectedElements;
+
+	protected JScrollPane scrPnTblAvailableElements;
+
+	protected JScrollPane scrPnTblSelectedElements;
+
+	protected GenericShuffleJXTable<T> shuffleTable;
+
+	protected GenericJXTable<T> tblAvailableElements;
+
+	protected GenericJXTable<T> tblSelectedElements;
+
+	public ShuffleTablePanel()
 	{
-		this(TableColumnsModel.builder().columnNames(new String[] { "Key", "Value" })
-			.canEdit(new boolean[] { false, false })
-			.columnClasses(new Class<?>[] { Object.class, Object.class }).build());
+		this(GenericModel.ofList(new ArrayList<>()));
 	}
 
-	/**
-	 * Instantiates a new {@link KeyValueTableModel} object.
-	 *
-	 * @param columnsModel
-	 *            the columns model
-	 */
-	public KeyValueTableModel(final TableColumnsModel columnsModel)
+	public ShuffleTablePanel(final Model<List<T>> model)
 	{
-		super(columnsModel);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public Object getValueAt(final int rowIndex, final int columnIndex)
-	{
-		final KeyValuePair<K, V> row = getData().get(rowIndex);
-		switch (columnIndex)
-		{
-			case 0 :
-				return row.getKey();
-			case 1 :
-				return row.getValue();
-			default :
-				return null;
-		}
+		super(model);
 	}
 
 }

@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2015 Asterios Raptis
+ * Copyright (C) 2021 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -22,10 +22,11 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.swing.table;
+package io.github.astrapi69.swing.table.shuffle;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.swing.table.GenericJXTable;
 import lombok.Getter;
 import io.github.astrapi69.check.Check;
 import io.github.astrapi69.swing.table.model.suffle.GenericShuffleTableModel;

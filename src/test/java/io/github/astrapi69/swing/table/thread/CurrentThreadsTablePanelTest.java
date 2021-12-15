@@ -22,37 +22,25 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.swing.table.model.dynamic;
+package io.github.astrapi69.swing.table.thread;
 
-import lombok.NonNull;
-import io.github.astrapi69.test.objects.Permission;
+import io.github.astrapi69.window.adapter.CloseWindow;
 
-/**
- * The class DynamicPermissionsTableModel
- */
-public class DynamicPermissionsTableModel extends DynamicTableModel<Permission>
+import javax.swing.*;
+
+public class CurrentThreadsTablePanelTest
 {
 
-	public DynamicPermissionsTableModel(@NonNull DynamicTableColumnsModel<Permission> columnsModel)
+	public static void main(final String[] args)
 	{
-		super(columnsModel);
-	}
+		final JFrame frame = new JFrame();
+		final CurrentThreadsTablePanel viewer = new CurrentThreadsTablePanel();
+		frame.addWindowListener(new CloseWindow());
 
-	@Override
-	public Object getValueAt(final int row, final int col)
-	{
-		final Permission permission = getData().get(row);
-		switch (col)
-		{
-			case 0 :
-				return permission.getName();
-			case 1 :
-				return permission.getDescription();
-			case 3 :
-				return permission.getDescription();
-			default :
-				return null;
-		}
+		frame.setContentPane(viewer);
+		frame.setSize(500, 300);
+		frame.setVisible(true);
+
 	}
 
 }

@@ -4,6 +4,14 @@
 Version 1.1-SNAPSHOT
 -------------
 
+ADDED:
+
+- all last relevant classes from swing-components repository
+
+CHANGED:
+
+- update gradle to new version 7.3.2
+
 Version 1
 -------------
 

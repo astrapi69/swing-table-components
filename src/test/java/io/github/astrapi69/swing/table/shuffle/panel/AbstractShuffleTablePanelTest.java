@@ -22,23 +22,32 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.swing.table.model.dynamic;
+package io.github.astrapi69.swing.table.shuffle.panel;
 
-import java.util.List;
-
-import javax.swing.*;
-
-import io.github.astrapi69.swing.table.GenericJXTable;
+import io.github.astrapi69.model.GenericModel;
+import io.github.astrapi69.model.api.Model;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
+import io.github.astrapi69.swing.table.model.TestPermissionsTableModel;
 import io.github.astrapi69.swing.table.test.instances.TestPermissionFactory;
 import io.github.astrapi69.test.objects.Permission;
 import io.github.astrapi69.window.adapter.CloseWindow;
 
-/**
- * The class DynamicTableModelTest
- */
-public class DynamicTableModelTest
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class AbstractShuffleTablePanelTest extends AbstractShuffleTablePanel<Permission>
 {
+
+	public AbstractShuffleTablePanelTest()
+	{
+		this(GenericModel.ofList(new ArrayList<>()));
+	}
+
+	public AbstractShuffleTablePanelTest(Model<List<Permission>> ofList)
+	{
+		super(ofList);
+	}
 
 	/**
 	 * The main method.
@@ -48,39 +57,30 @@ public class DynamicTableModelTest
 	 */
 	public static void main(final String[] args)
 	{
-		newTableModelWithTableAndShow();
-	}
-
-	/**
-	 * Creates the table model with table and show.
-	 */
-	private static void newTableModelWithTableAndShow()
-	{
 		// 1. Create a list with data.
 		final List<Permission> permissions = TestPermissionFactory.getPermissions();
-		// 2. Create a generic table model for the class Permission.
-		final GenericTableModel<Permission> permissionsTableModel = new DynamicPermissionsTableModel(
-			new DynamicTableColumnsModel<>(Permission.class));
-		// 3. Add the data to the model.
-		permissionsTableModel.addList(permissions);
-		// 4. Create the generic table and associate with the generic table model.
-		final GenericJXTable<Permission> permissionTable = new GenericJXTable<>(
-			permissionsTableModel);
-		// 5. Add the table to a JScrollPane.
-		final JScrollPane scrPnTblPermissions = new JScrollPane();
-		scrPnTblPermissions.setViewportView(permissionTable);
-		// 6. Create a Frame for displaying the table.
+		// 2. Create a panel with that encapsulates the two tables and buttons.
+		final AbstractShuffleTablePanelTest panel = new AbstractShuffleTablePanelTest(GenericModel.ofList(permissions));
+		// 3. Create a Frame for displaying the shuffle table.
 		final JFrame frame = new JFrame();
 		frame.addWindowListener(new CloseWindow());
-		// 7. Add the JScrollPane to the Frame.
-		frame.add(scrPnTblPermissions);
-		frame.setSize(600, 400);
-		// 8. Show the Frame.
+		// 4. Add the Panel to the Frame.
+		frame.add(panel);
+		frame.pack();
+		// 5. Show the Frame.
 		frame.setVisible(true);
 		if (!frame.isActive())
 		{
 			frame.toFront();
 		}
 	}
+	@Override protected GenericTableModel<Permission> newLeftTableModel()
+	{
+		return new TestPermissionsTableModel();
+	}
 
+	@Override protected GenericTableModel<Permission> newRightTableModel()
+	{
+		return new TestPermissionsTableModel();
+	}
 }

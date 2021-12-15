@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2015 Asterios Raptis
+ * Copyright (C) 2021 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -42,6 +42,27 @@ public class TableCellButtonRenderer extends JButton implements TableCellRendere
 
 	private Color backround;
 	private Color foreground;
+
+	/**
+	 * Factory method for creating the new {@link TableCellButtonRenderer} with the given string
+	 *
+	 * @param text
+	 *            the text
+	 * @return the new {@link TableCellButtonRenderer}
+	 */
+	public static TableCellButtonRenderer of(final String text)
+	{
+		return new TableCellButtonRenderer(null, null)
+		{
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected String onSetText(final Object value)
+			{
+				return text;
+			}
+		};
+	}
 
 	public TableCellButtonRenderer()
 	{
