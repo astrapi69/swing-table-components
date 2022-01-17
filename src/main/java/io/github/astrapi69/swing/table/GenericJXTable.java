@@ -30,6 +30,7 @@ import java.util.Optional;
 
 import javax.swing.table.TableRowSorter;
 
+import lombok.Getter;
 import lombok.NonNull;
 
 import org.jdesktop.swingx.JXTable;
@@ -44,6 +45,7 @@ import io.github.astrapi69.swing.table.model.GenericTableModel;
  * @param <T>
  *            the generic type of the model
  */
+@Getter
 public class GenericJXTable<T> extends JXTable
 {
 
@@ -59,7 +61,7 @@ public class GenericJXTable<T> extends JXTable
 	 * @param genericTableModel
 	 *            the generic table model
 	 */
-	public GenericJXTable(final GenericTableModel<T> genericTableModel)
+	public GenericJXTable(final @NonNull GenericTableModel<T> genericTableModel)
 	{
 		super();
 		this.genericTableModel = genericTableModel;
@@ -75,55 +77,37 @@ public class GenericJXTable<T> extends JXTable
 			@Override
 			public void onSingleClick(MouseEvent mouseEvent)
 			{
-				int selectedRow = getSelectedRow();
-				if (selectedRow != -1)
+				if (mouseEvent.getButton() == MouseEvent.BUTTON1)
 				{
-					if (mouseEvent.getButton() == MouseEvent.BUTTON1)
-					{
-						onSingleLeftClick(mouseEvent);
-					}
-					if (mouseEvent.getButton() == MouseEvent.BUTTON2)
-					{
-						onSingleMiddleClick(mouseEvent);
-					}
-					if (mouseEvent.getButton() == MouseEvent.BUTTON3)
-					{
-						onSingleRightClick(mouseEvent);
-					}
+					onSingleLeftClick(mouseEvent);
+				}
+				if (mouseEvent.getButton() == MouseEvent.BUTTON2)
+				{
+					onSingleMiddleClick(mouseEvent);
+				}
+				if (mouseEvent.getButton() == MouseEvent.BUTTON3)
+				{
+					onSingleRightClick(mouseEvent);
 				}
 			}
 
 			@Override
 			public void onDoubleClick(MouseEvent mouseEvent)
 			{
-				int selectedRow = getSelectedRow();
-				if (selectedRow != -1)
+				if (mouseEvent.getButton() == MouseEvent.BUTTON1)
 				{
-					if (mouseEvent.getButton() == MouseEvent.BUTTON1)
-					{
-						onDoubleLeftClick(mouseEvent);
-					}
-					if (mouseEvent.getButton() == MouseEvent.BUTTON2)
-					{
-						onDoubleMiddleClick(mouseEvent);
-					}
-					if (mouseEvent.getButton() == MouseEvent.BUTTON3)
-					{
-						onDoubleRightClick(mouseEvent);
-					}
+					onDoubleLeftClick(mouseEvent);
+				}
+				if (mouseEvent.getButton() == MouseEvent.BUTTON2)
+				{
+					onDoubleMiddleClick(mouseEvent);
+				}
+				if (mouseEvent.getButton() == MouseEvent.BUTTON3)
+				{
+					onDoubleRightClick(mouseEvent);
 				}
 			}
 		});
-	}
-
-	/**
-	 * Gets the generic table model.
-	 *
-	 * @return the generic table model
-	 */
-	public GenericTableModel<T> getGenericTableModel()
-	{
-		return genericTableModel;
 	}
 
 	/**
@@ -192,16 +176,6 @@ public class GenericJXTable<T> extends JXTable
 			sr[i] = this.convertRowIndexToModel(selectedRows[i]);
 		}
 		return sr;
-	}
-
-	/**
-	 * Gets the sorter.
-	 *
-	 * @return the sorter
-	 */
-	public TableRowSorter<GenericTableModel<T>> getSorter()
-	{
-		return sorter;
 	}
 
 	/**
