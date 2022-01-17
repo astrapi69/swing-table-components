@@ -10,7 +10,10 @@ ADDED:
 
 CHANGED:
 
-- update gradle to new version 7.3.2
+- update of gradle version to 7.3.3
+- update of gradle-plugin dependency com.github.ben-manes.versions.gradle.plugin to new version 0.41.0
+- update of dependency swing-base-components to new version 1.1
+- update of dependency jobj-core to new version 5.2
 
 Version 1
 -------------

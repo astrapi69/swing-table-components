@@ -32,17 +32,18 @@ import java.util.List;
 
 import javax.swing.*;
 
-import io.github.astrapi69.swing.table.GenericJXTable;
-import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
 import org.jdesktop.swingx.JXButton;
 import org.jdesktop.swingx.JXLabel;
 
 import io.github.astrapi69.model.BaseModel;
 import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.swing.table.GenericJXTable;
+import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
+import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
 import io.github.astrapi69.test.objects.Permission;
 import io.github.astrapi69.window.adapter.CloseWindow;
 
-public class PermissionsShuffleTablePanel extends ShuffleTablePanel<Permission>
+public class DemoPermissionsShuffleTablePanel extends ShuffleTablePanel<Permission>
 	implements
 		ActionListener
 {
@@ -50,7 +51,7 @@ public class PermissionsShuffleTablePanel extends ShuffleTablePanel<Permission>
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	public PermissionsShuffleTablePanel(final Model<List<Permission>> model)
+	public DemoPermissionsShuffleTablePanel(final Model<List<Permission>> model)
 	{
 		super(model);
 	}
@@ -75,7 +76,7 @@ public class PermissionsShuffleTablePanel extends ShuffleTablePanel<Permission>
 		final Frame frame = new Frame();
 		frame.addWindowListener(new CloseWindow());
 		frame.setTitle("Shuffle table panel");
-		final PermissionsShuffleTablePanel panel = new PermissionsShuffleTablePanel(
+		final DemoPermissionsShuffleTablePanel panel = new DemoPermissionsShuffleTablePanel(
 			BaseModel.of(permissions));
 		frame.add(panel);
 		frame.setSize(700, 500);
@@ -131,13 +132,13 @@ public class PermissionsShuffleTablePanel extends ShuffleTablePanel<Permission>
 		this.scrPnTblAvailableElements = new JScrollPane();
 		this.scrPnTblSelectedElements = new JScrollPane();
 		// 2. Create a generic table model for the class Permission.
-		final PermissionsTableModel permissionsTableModel = new PermissionsTableModel();
+		final DemoPermissionsTableModel permissionsTableModel = new DemoPermissionsTableModel();
 		// 3. Add the data to the model.
 		permissionsTableModel.addList(getModelObject());
 		// 4. Create the generic table and associate with the generic table
 		// model.
 		this.tblAvailableElements = new GenericJXTable<>(permissionsTableModel);
-		this.tblSelectedElements = new GenericJXTable<>(new PermissionsTableModel());
+		this.tblSelectedElements = new GenericJXTable<>(new DemoPermissionsTableModel());
 		this.shuffleTable = new GenericShuffleJXTable<>(this.tblAvailableElements,
 			this.tblSelectedElements);
 		this.scrPnTblAvailableElements.setViewportView(this.tblAvailableElements);

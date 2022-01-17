@@ -36,9 +36,9 @@ import io.github.astrapi69.swing.table.GenericJXTable;
 import io.github.astrapi69.swing.table.model.thread.ThreadsTableModel;
 
 /**
- * The class {@link CurrentThreadsTablePanel} shows all running threads in an application.
+ * The class {@link DemoCurrentThreadsTablePanel} shows all running threads in an application.
  */
-public class CurrentThreadsTablePanel extends BasePanel<ThreadsTableModel>
+public class DemoCurrentThreadsTablePanel extends BasePanel<ThreadsTableModel>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -47,12 +47,12 @@ public class CurrentThreadsTablePanel extends BasePanel<ThreadsTableModel>
 
 	private GenericJXTable<ThreadDataBean> threadTable;
 
-	public CurrentThreadsTablePanel()
+	public DemoCurrentThreadsTablePanel()
 	{
 		this(BaseModel.of(new ThreadsTableModel()));
 	}
 
-	public CurrentThreadsTablePanel(final Model<ThreadsTableModel> model)
+	public DemoCurrentThreadsTablePanel(final Model<ThreadsTableModel> model)
 	{
 		super(model);
 	}
@@ -71,15 +71,14 @@ public class CurrentThreadsTablePanel extends BasePanel<ThreadsTableModel>
 
 	protected ThreadsTableModel newThreadsTableModel()
 	{
-		final ThreadsTableModel tableModel = new ThreadsTableModel();
-		return tableModel;
+		return new ThreadsTableModel();
 	}
 
 	@Override
 	protected void onInitializeComponents()
 	{
 		super.onInitializeComponents();
-		threadTable = new GenericJXTable<ThreadDataBean>(getModelObject());
+		threadTable = new GenericJXTable<>(getModelObject());
 		scrThreadTable = new JScrollPane(threadTable);
 	}
 

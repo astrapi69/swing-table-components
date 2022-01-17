@@ -27,9 +27,9 @@ package io.github.astrapi69.swing.table.model;
 import io.github.astrapi69.test.objects.Permission;
 
 /**
- * The class TestPermissionsTableModel.
+ * The class DemoPermissionsTableModel.
  */
-public class TestPermissionsTableModel extends GenericTableModel<Permission>
+public class DemoPermissionsTableModel extends GenericTableModel<Permission>
 {
 
 	/** The Constant DESCRIPTION. */

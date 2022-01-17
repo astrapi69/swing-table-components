@@ -24,27 +24,28 @@
  */
 package io.github.astrapi69.swing.table.shuffle.panel;
 
-import io.github.astrapi69.model.GenericModel;
-import io.github.astrapi69.model.api.Model;
-import io.github.astrapi69.swing.table.model.GenericTableModel;
-import io.github.astrapi69.swing.table.model.TestPermissionsTableModel;
-import io.github.astrapi69.swing.table.test.instances.TestPermissionFactory;
-import io.github.astrapi69.test.objects.Permission;
-import io.github.astrapi69.window.adapter.CloseWindow;
-
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AbstractShuffleTablePanelTest extends AbstractShuffleTablePanel<Permission>
+import javax.swing.*;
+
+import io.github.astrapi69.model.GenericModel;
+import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
+import io.github.astrapi69.swing.table.model.GenericTableModel;
+import io.github.astrapi69.test.instances.TestPermissionFactory;
+import io.github.astrapi69.test.objects.Permission;
+import io.github.astrapi69.window.adapter.CloseWindow;
+
+public class DemoShuffleTablePanel extends AbstractShuffleTablePanel<Permission>
 {
 
-	public AbstractShuffleTablePanelTest()
+	public DemoShuffleTablePanel()
 	{
 		this(GenericModel.ofList(new ArrayList<>()));
 	}
 
-	public AbstractShuffleTablePanelTest(Model<List<Permission>> ofList)
+	public DemoShuffleTablePanel(Model<List<Permission>> ofList)
 	{
 		super(ofList);
 	}
@@ -60,7 +61,8 @@ public class AbstractShuffleTablePanelTest extends AbstractShuffleTablePanel<Per
 		// 1. Create a list with data.
 		final List<Permission> permissions = TestPermissionFactory.getPermissions();
 		// 2. Create a panel with that encapsulates the two tables and buttons.
-		final AbstractShuffleTablePanelTest panel = new AbstractShuffleTablePanelTest(GenericModel.ofList(permissions));
+		final DemoShuffleTablePanel panel = new DemoShuffleTablePanel(
+			GenericModel.ofList(permissions));
 		// 3. Create a Frame for displaying the shuffle table.
 		final JFrame frame = new JFrame();
 		frame.addWindowListener(new CloseWindow());
@@ -74,13 +76,16 @@ public class AbstractShuffleTablePanelTest extends AbstractShuffleTablePanel<Per
 			frame.toFront();
 		}
 	}
-	@Override protected GenericTableModel<Permission> newLeftTableModel()
+
+	@Override
+	protected GenericTableModel<Permission> newLeftTableModel()
 	{
-		return new TestPermissionsTableModel();
+		return new DemoPermissionsTableModel();
 	}
 
-	@Override protected GenericTableModel<Permission> newRightTableModel()
+	@Override
+	protected GenericTableModel<Permission> newRightTableModel()
 	{
-		return new TestPermissionsTableModel();
+		return new DemoPermissionsTableModel();
 	}
 }

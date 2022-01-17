@@ -24,17 +24,17 @@
  */
 package io.github.astrapi69.swing.table.thread;
 
-import io.github.astrapi69.window.adapter.CloseWindow;
-
 import javax.swing.*;
 
-public class CurrentThreadsTablePanelTest
+import io.github.astrapi69.window.adapter.CloseWindow;
+
+public class TestCurrentThreadsTablePanel
 {
 
 	public static void main(final String[] args)
 	{
 		final JFrame frame = new JFrame();
-		final CurrentThreadsTablePanel viewer = new CurrentThreadsTablePanel();
+		final DemoCurrentThreadsTablePanel viewer = new DemoCurrentThreadsTablePanel();
 		frame.addWindowListener(new CloseWindow());
 
 		frame.setContentPane(viewer);

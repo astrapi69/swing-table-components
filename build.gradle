@@ -1,5 +1,5 @@
-group = "$groupPackage"
-version = "$projectVersion"
+group = "$groupPackage" as Object
+version = "$projectVersion" as Object
 description = "$rootProject.name"
 
 buildscript {
@@ -42,21 +42,21 @@ sourceCompatibility = "$projectSourceCompatibility" as Object
 repositories {
     mavenLocal()
     mavenCentral()
-}
-
-javadoc {
-    failOnError = false
-    if(JavaVersion.current().isJava9Compatible()) {
-        options.addBooleanOption("html5", true)
+    maven {
+        name "Sonatype Nexus Snapshots"
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+        mavenContent {
+            snapshotsOnly()
+        }
     }
 }
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
-}
-
-test {
-    useJUnitPlatform()
+    // uncomment the next line for build with compiler argument -Xlint:deprecation
+    // options.compilerArgs << "-Xlint:deprecation"
+    // uncomment the next line for build with compiler argument -Xlint:unchecked
+    // options.compilerArgs << "-Xlint:unchecked"
 }
 
 task sourcesJar(type: Jar) {
@@ -70,14 +70,12 @@ task javadocJar(type: Jar) {
     javadoc.properties.failOnError = true
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled true
+javadoc {
+    failOnError = false
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption("html5", true)
     }
 }
-
-check.dependsOn jacocoTestReport
 
 def releaseVersion = !version.endsWith("SNAPSHOT")
 
@@ -192,6 +190,19 @@ license {
 // workhack for license issue #76
 gradle.startParameter.excludedTaskNames += "licenseMain"
 gradle.startParameter.excludedTaskNames += "licenseTest"
+
+test {
+    useJUnitPlatform()
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+check.dependsOn jacocoTestReport
 
 dependencies {
     compileOnly("org.projectlombok:lombok:$lombokVersion")

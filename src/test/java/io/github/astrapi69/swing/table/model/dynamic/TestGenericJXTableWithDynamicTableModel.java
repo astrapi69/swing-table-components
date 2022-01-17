@@ -30,14 +30,14 @@ import javax.swing.*;
 
 import io.github.astrapi69.swing.table.GenericJXTable;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
-import io.github.astrapi69.swing.table.test.instances.TestPermissionFactory;
+import io.github.astrapi69.test.instances.TestPermissionFactory;
 import io.github.astrapi69.test.objects.Permission;
 import io.github.astrapi69.window.adapter.CloseWindow;
 
 /**
- * The class DynamicTableModelTest
+ * The class TestGenericJXTableWithDynamicTableModel
  */
-public class DynamicTableModelTest
+public class TestGenericJXTableWithDynamicTableModel
 {
 
 	/**
@@ -59,7 +59,7 @@ public class DynamicTableModelTest
 		// 1. Create a list with data.
 		final List<Permission> permissions = TestPermissionFactory.getPermissions();
 		// 2. Create a generic table model for the class Permission.
-		final GenericTableModel<Permission> permissionsTableModel = new DynamicPermissionsTableModel(
+		final GenericTableModel<Permission> permissionsTableModel = new PermissionsDynamicTableModel(
 			new DynamicTableColumnsModel<>(Permission.class));
 		// 3. Add the data to the model.
 		permissionsTableModel.addList(permissions);

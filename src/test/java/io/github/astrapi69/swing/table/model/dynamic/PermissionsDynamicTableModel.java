@@ -24,16 +24,18 @@
  */
 package io.github.astrapi69.swing.table.model.dynamic;
 
+import java.util.Optional;
+
 import lombok.NonNull;
 import io.github.astrapi69.test.objects.Permission;
 
 /**
- * The class DynamicPermissionsTableModel
+ * The class PermissionsDynamicTableModel
  */
-public class DynamicPermissionsTableModel extends DynamicTableModel<Permission>
+public class PermissionsDynamicTableModel extends DynamicTableModel<Permission>
 {
 
-	public DynamicPermissionsTableModel(@NonNull DynamicTableColumnsModel<Permission> columnsModel)
+	public PermissionsDynamicTableModel(@NonNull DynamicTableColumnsModel<Permission> columnsModel)
 	{
 		super(columnsModel);
 	}
@@ -45,13 +47,13 @@ public class DynamicPermissionsTableModel extends DynamicTableModel<Permission>
 		switch (col)
 		{
 			case 0 :
-				return permission.getName();
+				return permission.getDescription();
 			case 1 :
-				return permission.getDescription();
-			case 3 :
-				return permission.getDescription();
+				return permission.getName();
+			case 2 :
+				return permission.getShortcut();
 			default :
-				return null;
+				return Optional.empty();
 		}
 	}
 

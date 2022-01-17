@@ -29,8 +29,6 @@ import java.util.List;
 
 import javax.swing.*;
 
-import io.github.astrapi69.swing.table.GenericJXTable;
-import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -40,6 +38,8 @@ import org.jdesktop.swingx.JXLabel;
 import io.github.astrapi69.model.GenericModel;
 import io.github.astrapi69.model.api.Model;
 import io.github.astrapi69.swing.base.BasePanel;
+import io.github.astrapi69.swing.table.GenericJXTable;
+import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
 
 @Getter
 @Setter

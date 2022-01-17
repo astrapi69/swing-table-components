@@ -41,14 +41,14 @@ import io.github.astrapi69.swing.table.model.properties.StringKeyValueTableModel
 import io.github.astrapi69.swing.table.renderer.TableCellButtonRenderer;
 import io.github.astrapi69.window.adapter.CloseWindow;
 
-public class TableWithButtonsPanel extends BasePanel<List<KeyValuePair<String, String>>>
+public class DemoTableWithButtonsPanel extends BasePanel<List<KeyValuePair<String, String>>>
 {
 
 	private static final long serialVersionUID = 1L;
 	private JScrollPane scrTable;
 	private GenericJXTable<KeyValuePair<String, String>> table;
 
-	public TableWithButtonsPanel(final Model<List<KeyValuePair<String, String>>> model)
+	public DemoTableWithButtonsPanel(final Model<List<KeyValuePair<String, String>>> model)
 	{
 		super(model);
 	}
@@ -60,11 +60,12 @@ public class TableWithButtonsPanel extends BasePanel<List<KeyValuePair<String, S
 		list.add(KeyValuePair.<String, String> builder().key("bar").value("overview").build());
 		list.add(KeyValuePair.<String, String> builder().key("bla").value("overview").build());
 
-		final TableWithButtonsPanel panel = new TableWithButtonsPanel(GenericModel.ofList(list));
+		final DemoTableWithButtonsPanel panel = new DemoTableWithButtonsPanel(
+			GenericModel.ofList(list));
 
 		final JFrame frame = new JFrame();
 		frame.addWindowListener(new CloseWindow());
-		frame.setTitle("TableWithButtonsPanel");
+		frame.setTitle("DemoTableWithButtonsPanel");
 
 
 		frame.add(panel);

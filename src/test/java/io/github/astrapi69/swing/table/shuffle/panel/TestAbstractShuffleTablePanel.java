@@ -29,16 +29,16 @@ import java.util.List;
 import javax.swing.*;
 
 import io.github.astrapi69.model.GenericModel;
+import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
-import io.github.astrapi69.swing.table.model.TestPermissionsTableModel;
-import io.github.astrapi69.swing.table.test.instances.TestPermissionFactory;
+import io.github.astrapi69.test.instances.TestPermissionFactory;
 import io.github.astrapi69.test.objects.Permission;
 import io.github.astrapi69.window.adapter.CloseWindow;
 
 /**
- * The class GenericShuffleTableModelTest.
+ * The class TestAbstractShuffleTablePanel.
  */
-public class GenericShuffleTableModelTest
+public class TestAbstractShuffleTablePanel
 {
 
 	/**
@@ -59,13 +59,13 @@ public class GenericShuffleTableModelTest
 			@Override
 			protected GenericTableModel<Permission> newLeftTableModel()
 			{
-				return new TestPermissionsTableModel();
+				return new DemoPermissionsTableModel();
 			}
 
 			@Override
 			protected GenericTableModel<Permission> newRightTableModel()
 			{
-				return new TestPermissionsTableModel();
+				return new DemoPermissionsTableModel();
 			}
 
 		};

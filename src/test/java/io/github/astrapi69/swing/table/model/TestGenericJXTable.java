@@ -26,20 +26,19 @@ package io.github.astrapi69.swing.table.model;
 
 import java.awt.event.MouseEvent;
 import java.util.List;
-import java.util.Optional;
 
 import javax.swing.*;
 
 import io.github.astrapi69.swing.listener.mouse.MouseDoubleClickListener;
 import io.github.astrapi69.swing.table.GenericJXTable;
-import io.github.astrapi69.swing.table.test.instances.TestPermissionFactory;
+import io.github.astrapi69.test.instances.TestPermissionFactory;
 import io.github.astrapi69.test.objects.Permission;
 import io.github.astrapi69.window.adapter.CloseWindow;
 
 /**
- * The class GenericTableModelTest.
+ * The class TestGenericJXTable.
  */
-public class GenericTableModelTest
+public class TestGenericJXTable
 {
 
 	/**
@@ -61,20 +60,16 @@ public class GenericTableModelTest
 		// 1. Create a list with data.
 		final List<Permission> permissions = TestPermissionFactory.getPermissions();
 		// 2. Create a generic table model for the class Permission.
-		final TestPermissionsTableModel permissionsTableModel = new TestPermissionsTableModel();
+		final DemoPermissionsTableModel permissionsTableModel = new DemoPermissionsTableModel();
 		// 3. Add the data to the model.
 		permissionsTableModel.addList(permissions);
 		// 4. Create the generic table and associate with the generic table model.
 		final GenericJXTable<Permission> permissionTable = new GenericJXTable<>(
 			permissionsTableModel);
-		// ListSelectionModel selectionModel = permissionTable.getSelectionModel();
-		// selectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		// selectionModel.addListSelectionListener(e -> {
-		// Optional<Permission> singleSelectedRowData = permissionTable.getSingleSelectedRowData();
-		// if(singleSelectedRowData.isPresent()) {
-		// System.out.println(singleSelectedRowData.get());
-		// }
-		// });
+		ListSelectionModel selectionModel = permissionTable.getSelectionModel();
+		selectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		selectionModel.addListSelectionListener(e -> permissionTable.getSingleSelectedRowData()
+			.ifPresent(singleSelectedRowData -> System.out.println(singleSelectedRowData)));
 		permissionTable.addMouseListener(new MouseDoubleClickListener()
 		{
 			public void onSingleClick(MouseEvent e)
@@ -85,12 +80,8 @@ public class GenericTableModelTest
 			public void onDoubleClick(MouseEvent e)
 			{
 				System.out.println("double click");
-				Optional<Permission> singleSelectedRowData = permissionTable
-					.getSingleSelectedRowData();
-				if (singleSelectedRowData.isPresent())
-				{
-					System.out.println(singleSelectedRowData.get());
-				}
+				permissionTable.getSingleSelectedRowData()
+					.ifPresent(singleSelectedRowData -> System.out.println(singleSelectedRowData));
 			}
 		});
 		// 5. Add the table to a JScrollPane.

@@ -43,6 +43,18 @@ public class TableCellButtonRenderer extends JButton implements TableCellRendere
 	private Color backround;
 	private Color foreground;
 
+	public TableCellButtonRenderer()
+	{
+		this(null, null);
+	}
+
+	public TableCellButtonRenderer(final Color foreground, final Color backround)
+	{
+		setOpaque(true);
+		this.foreground = foreground;
+		this.backround = backround;
+	}
+
 	/**
 	 * Factory method for creating the new {@link TableCellButtonRenderer} with the given string
 	 *
@@ -62,18 +74,6 @@ public class TableCellButtonRenderer extends JButton implements TableCellRendere
 				return text;
 			}
 		};
-	}
-
-	public TableCellButtonRenderer()
-	{
-		this(null, null);
-	}
-
-	public TableCellButtonRenderer(final Color foreground, final Color backround)
-	{
-		setOpaque(true);
-		this.foreground = foreground;
-		this.backround = backround;
 	}
 
 	@Override

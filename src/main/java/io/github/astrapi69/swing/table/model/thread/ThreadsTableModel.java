@@ -42,11 +42,8 @@ public class ThreadsTableModel extends BaseTableModel<ThreadDataBean>
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-
-	private List<ThreadDataBean> currentThreadData;
-
 	private final Object lock;
-
+	private List<ThreadDataBean> currentThreadData;
 	private volatile boolean running;
 
 	private Thread updateRunningThreads;
@@ -121,22 +118,7 @@ public class ThreadsTableModel extends BaseTableModel<ThreadDataBean>
 	protected void onInitialize()
 	{
 		running = true;
-		final Runnable updater = new Runnable()
-		{
-			@Override
-			public void run()
-			{
-				try
-				{
-					update();
-				}
-				catch (final Exception exception)
-				{
-					exception.printStackTrace();
-				}
-			}
-		};
-		updateRunningThreads = new Thread(updater, "RunningThreadUpdater");
+		updateRunningThreads = new Thread(this::update, "RunningThreadUpdater");
 		updateRunningThreads.setPriority(Thread.MAX_PRIORITY);
 		updateRunningThreads.setDaemon(true);
 		updateRunningThreads.start();
@@ -145,22 +127,15 @@ public class ThreadsTableModel extends BaseTableModel<ThreadDataBean>
 
 	private void update()
 	{
-		final Runnable updateCurrentRunningThreads = new Runnable()
-		{
-			@Override
-			public void run()
-			{
-				updateCurrentThreadData();
-				fireTableDataChanged();
-			}
-		};
-
 		while (running)
 		{
 			try
 			{
 				newThreadData();
-				SwingUtilities.invokeAndWait(updateCurrentRunningThreads);
+				SwingUtilities.invokeAndWait(() -> {
+					updateCurrentThreadData();
+					fireTableDataChanged();
+				});
 				Thread.sleep(1000);
 			}
 			catch (final InterruptedException exception)
