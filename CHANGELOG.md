@@ -6,6 +6,7 @@ Version 1.1-SNAPSHOT
 
 ADDED:
 
+- new methods for check if the table have single, multiply or no selection
 - all last relevant classes from swing-components repository
 
 CHANGED:

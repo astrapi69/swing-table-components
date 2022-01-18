@@ -28,6 +28,7 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.Optional;
 
+import javax.swing.*;
 import javax.swing.table.TableRowSorter;
 
 import lombok.Getter;
@@ -248,6 +249,33 @@ public class GenericJXTable<T> extends JXTable
 		{
 			getGenericTableModel().removeAt(selectedRow);
 		}
+	}
+
+	/**
+	 * Returns true only if multiply rows are selected
+	 *
+	 * @return true only if multiply <code>rows</code> are selected, otherwise false
+	 */
+	public boolean isMultiplySelection() {
+		return !isSelectionEmpty() && !isSingleSelection();
+	}
+
+	/**
+	 * Returns true only if one <code>row</code> is selected
+	 *
+	 * @return true only if one <code>row</code> is selected, otherwise false
+	 */
+	public boolean isSingleSelection() {
+		return getSelectionModel().getSelectionMode() == ListSelectionModel.SINGLE_SELECTION;
+	}
+
+	/**
+	 * Returns true only if no <code>row</code> is selected
+	 *
+	 * @return true only if no <code>row</code> is selected, otherwise false
+	 */
+	public boolean isSelectionEmpty() {
+		return getSelectionModel().isSelectionEmpty();
 	}
 
 	/**
