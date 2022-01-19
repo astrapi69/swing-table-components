@@ -8,6 +8,7 @@ ADDED:
 
 - new methods for check if the table have single, multiply or no selection
 - all last relevant classes from swing-components repository
+- new method replaceWith that replaces the content with the given list of the GenericTableModel
 
 CHANGED:
 

@@ -90,6 +90,19 @@ public abstract class GenericTableModel<T> extends AbstractTableModel
 	}
 
 	/**
+	 * Adds the list.
+	 *
+	 * @param list
+	 *            the list of rows to add.
+	 */
+	public void replaceWith(final List<T> list)
+	{
+		removeAll();
+		data.addAll(list);
+		fireTableDataChanged();
+	}
+
+	/**
 	 * Removes all data from this table model.
 	 */
 	public void clear()
