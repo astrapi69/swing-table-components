@@ -22,70 +22,65 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.swing.table.shuffle.panel;
+package io.github.astrapi69.swing.table.panel;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.*;
-
+import io.github.astrapi69.model.BaseModel;
 import io.github.astrapi69.model.GenericModel;
 import io.github.astrapi69.model.api.Model;
 import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
-import io.github.astrapi69.test.instances.TestPermissionFactory;
 import io.github.astrapi69.test.objects.Permission;
 import io.github.astrapi69.window.adapter.CloseWindow;
 
-public class DemoShuffleTablePanel extends AbstractShuffleTablePanel<Permission>
+public class DemoTablePanel extends TablePanel<Permission>
 {
 
-	public DemoShuffleTablePanel()
+
+	public DemoTablePanel()
 	{
 		this(GenericModel.ofList(new ArrayList<>()));
 	}
 
-	public DemoShuffleTablePanel(Model<List<Permission>> ofList)
+	public DemoTablePanel(Model<List<Permission>> model)
 	{
-		super(ofList);
+		super(model);
 	}
 
-	/**
-	 * The main method.
-	 *
-	 * @param args
-	 *            the arguments
-	 */
 	public static void main(final String[] args)
 	{
 		// 1. Create a list with data.
-		final List<Permission> permissions = TestPermissionFactory.getPermissions();
-		// 2. Create a panel with that encapsulates the two tables and buttons.
-		final DemoShuffleTablePanel panel = new DemoShuffleTablePanel(
-			GenericModel.ofList(permissions));
-		// 3. Create a Frame for displaying the shuffle table.
-		final JFrame frame = new JFrame();
+		final List<Permission> permissions = new ArrayList<>();
+
+		permissions
+			.add(Permission.builder().name("read").description("Permission to read.").build());
+		permissions
+			.add(Permission.builder().name("write").description("Permission to write.").build());
+		permissions
+			.add(Permission.builder().name("delete").description("Permission to delete.").build());
+		permissions.add(
+			Permission.builder().name("execute").description("Permission to execute.").build());
+		permissions.add(Permission.builder().name("buy").description("Permission to buy.").build());
+		permissions
+			.add(Permission.builder().name("sale").description("Permission to sale.").build());
+
+		final Frame frame = new Frame();
 		frame.addWindowListener(new CloseWindow());
-		// 4. Add the Panel to the Frame.
+		frame.setTitle("Table panel");
+		final DemoTablePanel panel = new DemoTablePanel(BaseModel.of(permissions));
 		frame.add(panel);
-		frame.pack();
-		// 5. Show the Frame.
+		frame.setSize(700, 500);
 		frame.setVisible(true);
-		if (!frame.isActive())
-		{
-			frame.toFront();
-		}
 	}
 
 	@Override
-	protected GenericTableModel<Permission> newLeftTableModel()
+	protected GenericTableModel<Permission> newTableModel()
 	{
-		return new DemoPermissionsTableModel();
-	}
-
-	@Override
-	protected GenericTableModel<Permission> newRightTableModel()
-	{
-		return new DemoPermissionsTableModel();
+		DemoPermissionsTableModel demoPermissionsTableModel = new DemoPermissionsTableModel();
+		demoPermissionsTableModel.setData(getModelObject());
+		return demoPermissionsTableModel;
 	}
 }

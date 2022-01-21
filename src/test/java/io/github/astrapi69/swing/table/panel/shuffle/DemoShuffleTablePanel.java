@@ -22,24 +22,33 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.swing.table.shuffle.panel;
+package io.github.astrapi69.swing.table.panel.shuffle;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.*;
 
 import io.github.astrapi69.model.GenericModel;
+import io.github.astrapi69.model.api.Model;
 import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
 import io.github.astrapi69.test.instances.TestPermissionFactory;
 import io.github.astrapi69.test.objects.Permission;
 import io.github.astrapi69.window.adapter.CloseWindow;
 
-/**
- * The class TestAbstractShuffleTablePanel.
- */
-public class TestAbstractShuffleTablePanel
+public class DemoShuffleTablePanel extends AbstractShuffleTablePanel<Permission>
 {
+
+	public DemoShuffleTablePanel()
+	{
+		this(GenericModel.ofList(new ArrayList<>()));
+	}
+
+	public DemoShuffleTablePanel(Model<List<Permission>> ofList)
+	{
+		super(ofList);
+	}
 
 	/**
 	 * The main method.
@@ -52,31 +61,15 @@ public class TestAbstractShuffleTablePanel
 		// 1. Create a list with data.
 		final List<Permission> permissions = TestPermissionFactory.getPermissions();
 		// 2. Create a panel with that encapsulates the two tables and buttons.
-		final AbstractShuffleTablePanel<Permission> panel = new AbstractShuffleTablePanel<Permission>(
-			GenericModel.ofList(permissions))
-		{
-
-			@Override
-			protected GenericTableModel<Permission> newLeftTableModel()
-			{
-				return new DemoPermissionsTableModel();
-			}
-
-			@Override
-			protected GenericTableModel<Permission> newRightTableModel()
-			{
-				return new DemoPermissionsTableModel();
-			}
-
-		};
-
-		// 5. Create a Frame for displaying the shuffle table.
+		final DemoShuffleTablePanel panel = new DemoShuffleTablePanel(
+			GenericModel.ofList(permissions));
+		// 3. Create a Frame for displaying the shuffle table.
 		final JFrame frame = new JFrame();
 		frame.addWindowListener(new CloseWindow());
-		// 6. Add the Panel to the Frame.
+		// 4. Add the Panel to the Frame.
 		frame.add(panel);
 		frame.pack();
-		// 7. Show the Frame.
+		// 5. Show the Frame.
 		frame.setVisible(true);
 		if (!frame.isActive())
 		{
@@ -84,5 +77,15 @@ public class TestAbstractShuffleTablePanel
 		}
 	}
 
+	@Override
+	protected GenericTableModel<Permission> newLeftTableModel()
+	{
+		return new DemoPermissionsTableModel();
+	}
 
+	@Override
+	protected GenericTableModel<Permission> newRightTableModel()
+	{
+		return new DemoPermissionsTableModel();
+	}
 }
