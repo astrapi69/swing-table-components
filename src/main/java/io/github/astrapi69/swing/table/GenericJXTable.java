@@ -256,7 +256,8 @@ public class GenericJXTable<T> extends JXTable
 	 *
 	 * @return true only if multiply <code>rows</code> are selected, otherwise false
 	 */
-	public boolean isMultiplySelection() {
+	public boolean isMultiplySelection()
+	{
 		return isSelectionNotEmpty() && !isSingleSelection();
 	}
 
@@ -265,7 +266,8 @@ public class GenericJXTable<T> extends JXTable
 	 *
 	 * @return true only if one <code>row</code> is selected, otherwise false
 	 */
-	public boolean isSingleSelection() {
+	public boolean isSingleSelection()
+	{
 		return getSelectionModel().getSelectionMode() == ListSelectionModel.SINGLE_SELECTION;
 	}
 
@@ -274,7 +276,8 @@ public class GenericJXTable<T> extends JXTable
 	 *
 	 * @return true only if no <code>row</code> is selected, otherwise false
 	 */
-	public boolean isSelectionEmpty() {
+	public boolean isSelectionEmpty()
+	{
 		return getSelectionModel().isSelectionEmpty();
 	}
 
@@ -283,7 +286,8 @@ public class GenericJXTable<T> extends JXTable
 	 *
 	 * @return true only if any <code>row(s)</code> is/are selected, otherwise false
 	 */
-	public boolean isSelectionNotEmpty() {
+	public boolean isSelectionNotEmpty()
+	{
 		return !isSelectionEmpty();
 	}
 
