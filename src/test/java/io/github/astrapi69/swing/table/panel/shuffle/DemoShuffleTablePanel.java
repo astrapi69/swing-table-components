@@ -30,7 +30,7 @@ import java.util.List;
 import javax.swing.*;
 
 import io.github.astrapi69.model.GenericModel;
-import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
 import io.github.astrapi69.test.instances.TestPermissionFactory;
@@ -45,7 +45,7 @@ public class DemoShuffleTablePanel extends AbstractShuffleTablePanel<Permission>
 		this(GenericModel.ofList(new ArrayList<>()));
 	}
 
-	public DemoShuffleTablePanel(Model<List<Permission>> ofList)
+	public DemoShuffleTablePanel(final IModel<List<Permission>> ofList)
 	{
 		super(ofList);
 	}

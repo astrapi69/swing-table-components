@@ -36,7 +36,7 @@ import org.jdesktop.swingx.JXButton;
 import org.jdesktop.swingx.JXLabel;
 
 import io.github.astrapi69.model.BaseModel;
-import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.table.GenericJXTable;
 import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
 import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
@@ -51,7 +51,7 @@ public class DemoPermissionsShuffleTablePanel extends ShuffleTablePanel<Permissi
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	public DemoPermissionsShuffleTablePanel(final Model<List<Permission>> model)
+	public DemoPermissionsShuffleTablePanel(final IModel<List<Permission>> model)
 	{
 		super(model);
 	}

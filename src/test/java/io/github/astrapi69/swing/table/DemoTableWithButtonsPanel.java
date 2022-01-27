@@ -33,7 +33,7 @@ import javax.swing.table.TableColumn;
 
 import io.github.astrapi69.collections.pairs.KeyValuePair;
 import io.github.astrapi69.model.GenericModel;
-import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
 import io.github.astrapi69.swing.table.editor.TableCellButtonEditor;
 import io.github.astrapi69.swing.table.model.TableColumnsModel;
@@ -48,7 +48,7 @@ public class DemoTableWithButtonsPanel extends BasePanel<List<KeyValuePair<Strin
 	private JScrollPane scrTable;
 	private GenericJXTable<KeyValuePair<String, String>> table;
 
-	public DemoTableWithButtonsPanel(final Model<List<KeyValuePair<String, String>>> model)
+	public DemoTableWithButtonsPanel(final IModel<List<KeyValuePair<String, String>>> model)
 	{
 		super(model);
 	}

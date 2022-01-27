@@ -30,7 +30,7 @@ import java.util.List;
 
 import io.github.astrapi69.model.BaseModel;
 import io.github.astrapi69.model.GenericModel;
-import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
 import io.github.astrapi69.test.objects.Permission;
@@ -45,7 +45,7 @@ public class DemoTablePanel extends TablePanel<Permission>
 		this(GenericModel.ofList(new ArrayList<>()));
 	}
 
-	public DemoTablePanel(Model<List<Permission>> model)
+	public DemoTablePanel(final IModel<List<Permission>> model)
 	{
 		super(model);
 	}

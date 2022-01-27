@@ -32,7 +32,7 @@ import javax.swing.*;
 
 import lombok.Getter;
 import io.github.astrapi69.model.GenericModel;
-import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
 import io.github.astrapi69.swing.component.factory.SwingContainerFactory;
 import io.github.astrapi69.swing.table.GenericJXTable;
@@ -61,7 +61,7 @@ public abstract class TablePanel<T> extends BasePanel<List<T>>
 		this(GenericModel.ofList(new ArrayList<>()));
 	}
 
-	public TablePanel(final Model<List<T>> model)
+	public TablePanel(final IModel<List<T>> model)
 	{
 		super(model);
 	}

@@ -30,7 +30,7 @@ import javax.swing.*;
 
 import io.github.astrapi69.lang.thread.ThreadDataBean;
 import io.github.astrapi69.model.BaseModel;
-import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
 import io.github.astrapi69.swing.table.GenericJXTable;
 import io.github.astrapi69.swing.table.model.thread.ThreadsTableModel;
@@ -52,7 +52,7 @@ public class DemoCurrentThreadsTablePanel extends BasePanel<ThreadsTableModel>
 		this(BaseModel.of(new ThreadsTableModel()));
 	}
 
-	public DemoCurrentThreadsTablePanel(final Model<ThreadsTableModel> model)
+	public DemoCurrentThreadsTablePanel(final IModel<ThreadsTableModel> model)
 	{
 		super(model);
 	}

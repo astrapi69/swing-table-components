@@ -32,7 +32,7 @@ import javax.swing.*;
 
 import lombok.Getter;
 import io.github.astrapi69.model.GenericModel;
-import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
 import io.github.astrapi69.swing.menu.MenuFactory;
 import io.github.astrapi69.swing.table.GenericJXTable;
@@ -111,7 +111,7 @@ public abstract class AbstractShuffleTablePanel<T> extends BasePanel<List<T>>
 	 * @param model
 	 *            the model
 	 */
-	public AbstractShuffleTablePanel(Model<List<T>> model)
+	public AbstractShuffleTablePanel(final IModel<List<T>> model)
 	{
 		super(model);
 	}

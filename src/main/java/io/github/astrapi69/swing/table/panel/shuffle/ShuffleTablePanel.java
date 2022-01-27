@@ -36,7 +36,7 @@ import org.jdesktop.swingx.JXButton;
 import org.jdesktop.swingx.JXLabel;
 
 import io.github.astrapi69.model.GenericModel;
-import io.github.astrapi69.model.api.Model;
+import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
 import io.github.astrapi69.swing.table.GenericJXTable;
 import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
@@ -76,7 +76,7 @@ public class ShuffleTablePanel<T> extends BasePanel<List<T>>
 		this(GenericModel.ofList(new ArrayList<>()));
 	}
 
-	public ShuffleTablePanel(final Model<List<T>> model)
+	public ShuffleTablePanel(final IModel<List<T>> model)
 	{
 		super(model);
 	}
