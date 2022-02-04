@@ -27,7 +27,7 @@ package io.github.astrapi69.swing.table.panel.shuffle;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 
 import io.github.astrapi69.model.GenericModel;
 import io.github.astrapi69.model.api.IModel;

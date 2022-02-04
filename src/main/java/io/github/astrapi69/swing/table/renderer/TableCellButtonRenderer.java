@@ -24,9 +24,12 @@
  */
 package io.github.astrapi69.swing.table.renderer;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.UIManager;
 import javax.swing.table.TableCellRenderer;
 
 /**

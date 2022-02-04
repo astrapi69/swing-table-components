@@ -24,11 +24,13 @@
  */
 package io.github.astrapi69.swing.table;
 
-import java.awt.*;
+import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.*;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import javax.swing.table.TableColumn;
 
 import io.github.astrapi69.collections.pairs.KeyValuePair;

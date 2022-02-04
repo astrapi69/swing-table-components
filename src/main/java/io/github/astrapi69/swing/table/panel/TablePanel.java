@@ -24,11 +24,11 @@
  */
 package io.github.astrapi69.swing.table.panel;
 
-import java.awt.*;
+import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.*;
+import javax.swing.JScrollPane;
 
 import lombok.Getter;
 import io.github.astrapi69.model.GenericModel;

@@ -24,11 +24,16 @@
  */
 package io.github.astrapi69.swing.table.panel.shuffle;
 
-import java.awt.*;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
 
 import lombok.Getter;
 import io.github.astrapi69.model.GenericModel;

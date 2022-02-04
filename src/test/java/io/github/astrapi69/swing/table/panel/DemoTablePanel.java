@@ -24,7 +24,7 @@
  */
 package io.github.astrapi69.swing.table.panel;
 
-import java.awt.*;
+import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 

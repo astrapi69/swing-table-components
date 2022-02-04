@@ -28,7 +28,7 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.Optional;
 
-import javax.swing.*;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.TableRowSorter;
 
 import lombok.Getter;

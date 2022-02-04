@@ -27,7 +27,7 @@ package io.github.astrapi69.swing.table.panel.shuffle;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.*;
+import javax.swing.JScrollPane;
 
 import lombok.Getter;
 import lombok.Setter;

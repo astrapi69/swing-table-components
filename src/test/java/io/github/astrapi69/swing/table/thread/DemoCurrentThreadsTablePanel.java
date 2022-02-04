@@ -24,9 +24,9 @@
  */
 package io.github.astrapi69.swing.table.thread;
 
-import java.awt.*;
+import java.awt.BorderLayout;
 
-import javax.swing.*;
+import javax.swing.JScrollPane;
 
 import lombok.AccessLevel;
 import lombok.Getter;

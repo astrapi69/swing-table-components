@@ -24,11 +24,14 @@
  */
 package io.github.astrapi69.swing.table.editor;
 
-import java.awt.*;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JTable;
 import javax.swing.table.TableModel;
 
 import lombok.AccessLevel;
