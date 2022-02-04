@@ -12,7 +12,7 @@
 
 </div>
 
-This repository provides table components like JXTable and ShuffleTable for swing applications. 
+This repository provides table components like JXTable and ShuffleTable for swing applications.
 
 > Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/astrapi69/swing-table-components" data-icon="octicon-star" aria-label="Star astrapi69/swing-table-components on GitHub">Star ⭐</a>
@@ -40,28 +40,28 @@ The source code comes under the liberal MIT License, making swing-table-componen
 Maven dependency is now on sonatype.
 Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~swing-table-components~~~) for latest snapshots and releases.
 
-Add the following maven dependency to your project `pom.xml` if you want to import the core 
+Add the following maven dependency to your project `pom.xml` if you want to import the core
 functionality of swing-table-components:
 
 Than you can add the dependency to your dependencies:
 
-	<properties>
-			...
-		<!-- swing-table-components version -->
-		<swing-table-components.version>1</swing-table-components.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- swing-table-components DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>swing-table-components</artifactId>
-				<version>${swing-table-components.version}</version>
-			</dependency>
-			...
-		</dependencies>
+    <properties>
+            ...
+        <!-- swing-table-components version -->
+        <swing-table-components.version>1</swing-table-components.version>
+            ...
+    </properties>
+            ...
+        <dependencies>
+            ...
+            <!-- swing-table-components DEPENDENCY -->
+            <dependency>
+                <groupId>io.github.astrapi69</groupId>
+                <artifactId>swing-table-components</artifactId>
+                <version>${swing-table-components.version}</version>
+            </dependency>
+            ...
+        </dependencies>
 
 ## gradle dependency
 
@@ -77,9 +77,9 @@ or in build.gradle ext area
 
 ```
 ext {
-			...
+            ...
     swingTableComponentsVersion = "1"
-			...
+            ...
 }
 ```
 
@@ -87,9 +87,9 @@ then add the dependency to the dependencies area
 
 ```
 dependencies {
-			...
+            ...
     implementation("io.github.astrapi69:swing-table-components:$swingTableComponentsVersion")
-			...
+            ...
 }
 ```
 
@@ -181,4 +181,3 @@ Do not hesitate to contact the swing-table-components developers with your quest
 ## Similar projects
 
 ## Credits
-
