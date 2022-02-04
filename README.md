@@ -9,6 +9,8 @@
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/swing-table-components.svg)](http://www.javadoc.io/doc/io.github.astrapi69/swing-table-components)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
+[![Hits Of Code](https://hitsofcode.com/github/astrapi69/swing-table-components?branch=main)](https://hitsofcode.com/github/astrapi69/swing-table-components/view?branch=main)
+[![Lines Of Code](https://tokei.rs/b1/github/astrapi69/swing-table-components)](https://github.com/astrapi69/swing-table-components)
 
 </div>
 
@@ -35,6 +37,28 @@ No animals were harmed in the making of this library.
 
 The source code comes under the liberal MIT License, making swing-table-components great for all types of applications.
 
+## gradle dependency
+
+You can first define the version in the ext section and add than the following gradle dependency to
+your project `build.gradle` if you want to import the core functionality of swing-table-components:
+
+define version in file gradle.properties
+```
+swingTableComponentsVersion=1.1
+```
+
+or in build.gradle ext area
+
+```
+    swingTableComponentsVersion = "1.1"
+```
+
+then add the dependency to the dependencies area
+
+```
+    implementation("io.github.astrapi69:swing-table-components:$swingTableComponentsVersion")
+```
+
 ## Maven dependency
 
 Maven dependency is now on sonatype.
@@ -48,7 +72,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- swing-table-components version -->
-        <swing-table-components.version>1</swing-table-components.version>
+        <swing-table-components.version>1.1</swing-table-components.version>
             ...
     </properties>
             ...
@@ -62,36 +86,6 @@ Than you can add the dependency to your dependencies:
             </dependency>
             ...
         </dependencies>
-
-## gradle dependency
-
-You can first define the version in the ext section and add than the following gradle dependency to
-your project `build.gradle` if you want to import the core functionality of swing-table-components:
-
-define version in file gradle.properties
-```
-swingTableComponentsVersion=1
-```
-
-or in build.gradle ext area
-
-```
-ext {
-            ...
-    swingTableComponentsVersion = "1"
-            ...
-}
-```
-
-then add the dependency to the dependencies area
-
-```
-dependencies {
-            ...
-    implementation("io.github.astrapi69:swing-table-components:$swingTableComponentsVersion")
-            ...
-}
-```
 
 # Donations
 
