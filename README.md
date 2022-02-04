@@ -2,8 +2,7 @@
 
 <div style="text-align: center">
 
-[![Build Status](https://travis-ci.com/astrapi69/swing-table-components.svg?branch=master)](https://travis-ci.com/github/astrapi69/swing-table-components)
-[![Coverage Status](https://codecov.io/gh/astrapi69/swing-table-components/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/swing-table-components)
+[![Java CI with Gradle](https://github.com/astrapi69/swing-table-components/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/swing-table-components/actions/workflows/gradle.yml)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/swing-table-components.svg?style=flat)](https://github.com/astrapi69/swing-table-components/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/swing-table-components/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/swing-table-components)
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/swing-table-components.svg)](http://www.javadoc.io/doc/io.github.astrapi69/swing-table-components)
