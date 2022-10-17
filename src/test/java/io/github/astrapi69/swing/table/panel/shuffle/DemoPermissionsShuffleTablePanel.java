@@ -43,7 +43,7 @@ import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.table.GenericJXTable;
 import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
 import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
-import io.github.astrapi69.test.objects.Permission;
+import io.github.astrapi69.test.object.Permission;
 import io.github.astrapi69.window.adapter.CloseWindow;
 
 public class DemoPermissionsShuffleTablePanel extends ShuffleTablePanel<Permission>

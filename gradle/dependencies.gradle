@@ -1,0 +1,23 @@
+
+dependencies {
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
+    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
+    implementation("org.swinglabs.swingx:swingx-all:$swingxAllVersion")
+    implementation("org.apache.commons:commons-lang3:$commonsLang3Version")
+    implementation("io.github.astrapi69:swing-base-components:$swingBaseComponentsVersion")
+    implementation("io.github.astrapi69:model-data:$modelDataVersion")
+    implementation("io.github.astrapi69:menu-actions:$menuActionsVersion")
+    implementation("io.github.astrapi69:silly-collection:$sillyCollectionVersion")
+    implementation("io.github.astrapi69:silly-bean:$sillyBeanVersion")
+    implementation("io.github.astrapi69:jobj-core:$jobjCoreVersion")
+    implementation("io.github.astrapi69:jobj-reflect:$jobjReflectVersion")
+    testCompileOnly("org.projectlombok:lombok:$lombokVersion")
+    testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
+    testImplementation("io.github.astrapi69:test-object:$testObjectVersion")
+    testImplementation("io.github.astrapi69:silly-io:$sillyIoVersion")
+    testImplementation("io.github.astrapi69:file-worker:$fileWorkerVersion")
+    testImplementation("io.github.astrapi69:throwable:$throwableVersion")
+    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+}

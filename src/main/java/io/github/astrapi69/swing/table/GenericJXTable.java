@@ -36,7 +36,7 @@ import lombok.NonNull;
 
 import org.jdesktop.swingx.JXTable;
 
-import io.github.astrapi69.collections.list.ListFactory;
+import io.github.astrapi69.collection.list.ListFactory;
 import io.github.astrapi69.swing.listener.mouse.MouseDoubleClickListener;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
 

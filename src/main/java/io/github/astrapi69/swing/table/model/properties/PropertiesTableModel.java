@@ -28,7 +28,7 @@ import java.util.Properties;
 
 import javax.swing.table.AbstractTableModel;
 
-import io.github.astrapi69.collections.properties.IndexSortedProperties;
+import io.github.astrapi69.collection.properties.IndexSortedProperties;
 
 /**
  * The class {@link PropertiesTableModel}.

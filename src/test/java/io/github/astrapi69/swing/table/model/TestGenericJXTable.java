@@ -33,8 +33,8 @@ import javax.swing.ListSelectionModel;
 
 import io.github.astrapi69.swing.listener.mouse.MouseDoubleClickListener;
 import io.github.astrapi69.swing.table.GenericJXTable;
-import io.github.astrapi69.test.instances.TestPermissionFactory;
-import io.github.astrapi69.test.objects.Permission;
+import io.github.astrapi69.test.instance.TestPermissionFactory;
+import io.github.astrapi69.test.object.Permission;
 import io.github.astrapi69.window.adapter.CloseWindow;
 
 /**

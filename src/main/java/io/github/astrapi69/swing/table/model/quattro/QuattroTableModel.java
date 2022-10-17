@@ -24,7 +24,7 @@
  */
 package io.github.astrapi69.swing.table.model.quattro;
 
-import io.github.astrapi69.collections.pairs.Quattro;
+import io.github.astrapi69.collection.pair.Quattro;
 import io.github.astrapi69.swing.table.model.BaseTableModel;
 import io.github.astrapi69.swing.table.model.TableColumnsModel;
 

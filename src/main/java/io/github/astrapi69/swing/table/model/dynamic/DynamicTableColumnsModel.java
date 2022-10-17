@@ -31,7 +31,7 @@ import lombok.NonNull;
 
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.astrapi69.collections.list.ListFactory;
+import io.github.astrapi69.collection.list.ListFactory;
 import io.github.astrapi69.reflection.ReflectionExtensions;
 
 /**

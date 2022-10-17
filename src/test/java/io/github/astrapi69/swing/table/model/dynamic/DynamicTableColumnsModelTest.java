@@ -28,9 +28,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import io.github.astrapi69.collections.array.ArrayFactory;
-import io.github.astrapi69.test.objects.Person;
-import io.github.astrapi69.test.objects.enums.Gender;
+import io.github.astrapi69.collection.array.ArrayFactory;
+import io.github.astrapi69.test.object.Person;
+import io.github.astrapi69.test.object.enumtype.Gender;
 
 /**
  * The unit test class for the class {@link DynamicTableColumnsModel}

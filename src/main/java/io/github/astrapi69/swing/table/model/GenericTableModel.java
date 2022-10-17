@@ -29,7 +29,7 @@ import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
-import io.github.astrapi69.collections.list.ListFactory;
+import io.github.astrapi69.collection.list.ListFactory;
 
 /**
  * The class {@link GenericTableModel} as the name presume it can take a generic type of the model

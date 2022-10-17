@@ -24,7 +24,7 @@
  */
 package io.github.astrapi69.swing.table.model;
 
-import io.github.astrapi69.test.objects.Permission;
+import io.github.astrapi69.test.object.Permission;
 
 /**
  * The class DemoPermissionsTableModel.
