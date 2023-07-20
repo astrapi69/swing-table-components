@@ -4,7 +4,14 @@
 Version 2.1-SNAPSHOT
 -------------
 
+CHANGED:
 
+- update of gradle version to 8.3-rc-1
+- update of gradle plugin dependency io.freefair.gradle:lombok-plugin to new version 8.1.0
+- update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new version 6.20.0
+- update of gradle-plugin dependency com.github.ben-manes.versions.gradle.plugin to new version 0.47.0
+- update of dependency silly-collection to new minor version 21
+- update of dependency jobj-core version to 7.1
 
 Version 2
 -------------
