@@ -1,11 +1,12 @@
 ## Change log
 ----------------------
 
-Version 2.1-SNAPSHOT
+Version 3-SNAPSHOT
 -------------
 
 CHANGED:
 
+- update of JDK to newer version 17
 - update of gradle version to 8.3-rc-1
 - update of gradle plugin dependency io.freefair.gradle:lombok-plugin to new version 8.1.0
 - update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new version 6.20.0
