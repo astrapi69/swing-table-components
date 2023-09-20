@@ -28,6 +28,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.JScrollPane;
 
+import io.github.astrapi69.swing.table.GenericJTable;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -35,7 +36,6 @@ import io.github.astrapi69.lang.thread.ThreadDataBean;
 import io.github.astrapi69.model.BaseModel;
 import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
-import io.github.astrapi69.swing.table.GenericJXTable;
 import io.github.astrapi69.swing.table.model.thread.ThreadsTableModel;
 
 /**
@@ -50,7 +50,7 @@ public class DemoCurrentThreadsTablePanel extends BasePanel<ThreadsTableModel>
 
 	JScrollPane scrThreadTable;
 
-	GenericJXTable<ThreadDataBean> threadTable;
+	GenericJTable<ThreadDataBean> threadTable;
 
 	public DemoCurrentThreadsTablePanel()
 	{
@@ -83,7 +83,7 @@ public class DemoCurrentThreadsTablePanel extends BasePanel<ThreadsTableModel>
 	protected void onInitializeComponents()
 	{
 		super.onInitializeComponents();
-		threadTable = new GenericJXTable<>(getModelObject());
+		threadTable = new GenericJTable<>(getModelObject());
 		scrThreadTable = new JScrollPane(threadTable);
 	}
 

@@ -35,18 +35,18 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 
+import io.github.astrapi69.swing.menu.factory.JPopupMenuFactory;
+import io.github.astrapi69.swing.table.GenericJTable;
+import io.github.astrapi69.swing.table.shuffle.GenericShuffleJTable;
 import lombok.Getter;
 import io.github.astrapi69.model.GenericModel;
 import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
-import io.github.astrapi69.swing.menu.MenuFactory;
-import io.github.astrapi69.swing.table.GenericJXTable;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
-import io.github.astrapi69.swing.table.model.suffle.actions.AddAction;
-import io.github.astrapi69.swing.table.model.suffle.actions.AddAllAction;
-import io.github.astrapi69.swing.table.model.suffle.actions.RemoveAction;
-import io.github.astrapi69.swing.table.model.suffle.actions.RemoveAllAction;
-import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
+import io.github.astrapi69.swing.table.model.suffle.action.AddAction;
+import io.github.astrapi69.swing.table.model.suffle.action.AddAllAction;
+import io.github.astrapi69.swing.table.model.suffle.action.RemoveAction;
+import io.github.astrapi69.swing.table.model.suffle.action.RemoveAllAction;
 
 
 /**
@@ -93,13 +93,13 @@ public abstract class AbstractShuffleTablePanel<T> extends BasePanel<List<T>>
 	private JScrollPane scrPnTblRight;
 
 	/** The shuffle table. */
-	private GenericShuffleJXTable<T> shuffleTable;
+	private GenericShuffleJTable<T> shuffleTable;
 
 	/** The left table. */
-	private GenericJXTable<T> tblLeft;
+	private GenericJTable<T> tblLeft;
 
 	/** The right table. */
-	private GenericJXTable<T> tblRight;
+	private GenericJTable<T> tblRight;
 
 
 	/**
@@ -144,13 +144,13 @@ public abstract class AbstractShuffleTablePanel<T> extends BasePanel<List<T>>
 		super.onInitializeComponents();
 
 		// Create the tables and scrollpanes...
-		tblRight = new GenericJXTable<>(newRightTableModel());
-		tblLeft = new GenericJXTable<>(newLeftTableModel());
+		tblRight = new GenericJTable<>(newRightTableModel());
+		tblLeft = new GenericJTable<>(newLeftTableModel());
 		@SuppressWarnings("unchecked")
 		final GenericTableModel<T> tableModel = (GenericTableModel<T>)tblLeft.getModel();
 		tableModel.addList(getModelObject());
 
-		shuffleTable = new GenericShuffleJXTable<>(tblLeft, tblRight);
+		shuffleTable = new GenericShuffleJTable<>(tblLeft, tblRight);
 
 		addAction = new AddAction<>(shuffleTable);
 		removeAction = new RemoveAction<>(shuffleTable);
@@ -161,15 +161,15 @@ public abstract class AbstractShuffleTablePanel<T> extends BasePanel<List<T>>
 		addMenuItem.addActionListener(addAction);
 		final JMenuItem addAllMenuItem = new JMenuItem("All selected rows to right >>");
 		addAllMenuItem.addActionListener(addAllAction);
-		final JPopupMenu leftTablePopupMenu = MenuFactory.newJPopupMenu(shuffleTable.getLeftTable(),
-			addMenuItem, addAllMenuItem);
+		final JPopupMenu leftTablePopupMenu = JPopupMenuFactory
+			.newJPopupMenu(shuffleTable.getLeftTable(), addMenuItem, addAllMenuItem);
 		shuffleTable.getLeftTable().add(leftTablePopupMenu);
 
 		final JMenuItem removeMenuItem = new JMenuItem("< Selected row to left");
 		removeMenuItem.addActionListener(removeAction);
 		final JMenuItem removeAllMenuItem = new JMenuItem("<< All selected rows to left");
 		removeAllMenuItem.addActionListener(removeAllAction);
-		final JPopupMenu rightTablePopupMenu = MenuFactory
+		final JPopupMenu rightTablePopupMenu = JPopupMenuFactory
 			.newJPopupMenu(shuffleTable.getRightTable(), removeMenuItem, removeAllMenuItem);
 		shuffleTable.getRightTable().add(rightTablePopupMenu);
 

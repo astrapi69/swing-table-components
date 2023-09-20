@@ -35,8 +35,8 @@ import io.github.astrapi69.model.GenericModel;
 import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
 import io.github.astrapi69.swing.component.factory.SwingContainerFactory;
-import io.github.astrapi69.swing.table.GenericJXTable;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
+import io.github.astrapi69.swing.table.GenericJTable;
 
 /**
  * The class {@link TablePanel}.
@@ -54,7 +54,7 @@ public abstract class TablePanel<T> extends BasePanel<List<T>>
 	protected JScrollPane scrMainTable;
 
 	/** The main table. */
-	private GenericJXTable<T> tblMainTable;
+	private GenericJTable<T> tblMainTable;
 
 	public TablePanel()
 	{
@@ -71,7 +71,7 @@ public abstract class TablePanel<T> extends BasePanel<List<T>>
 	{
 		super.onInitializeComponents();
 		// Create the tables and scrollpanes...
-		tblMainTable = new GenericJXTable<>(newTableModel());
+		tblMainTable = new GenericJTable<>(newTableModel());
 		scrMainTable = newTableScrollPane();
 		scrMainTable.setViewportView(tblMainTable);
 	}

@@ -32,10 +32,10 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
 import io.github.astrapi69.swing.listener.mouse.MouseDoubleClickListener;
-import io.github.astrapi69.swing.table.GenericJXTable;
+import io.github.astrapi69.swing.table.GenericJTable;
 import io.github.astrapi69.test.instance.TestPermissionFactory;
 import io.github.astrapi69.test.object.Permission;
-import io.github.astrapi69.window.adapter.CloseWindow;
+import io.github.astrapi69.awt.window.adapter.CloseWindow;
 
 /**
  * The class TestGenericJXTable.
@@ -66,7 +66,7 @@ public class TestGenericJXTable
 		// 3. Add the data to the model.
 		permissionsTableModel.addList(permissions);
 		// 4. Create the generic table and associate with the generic table model.
-		final GenericJXTable<Permission> permissionTable = new GenericJXTable<>(
+		final GenericJTable<Permission> permissionTable = new GenericJTable<>(
 			permissionsTableModel);
 		ListSelectionModel selectionModel = permissionTable.getSelectionModel();
 		selectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);

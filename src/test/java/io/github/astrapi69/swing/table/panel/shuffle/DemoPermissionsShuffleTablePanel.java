@@ -33,18 +33,17 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
-
-import org.jdesktop.swingx.JXButton;
-import org.jdesktop.swingx.JXLabel;
 
 import io.github.astrapi69.model.BaseModel;
 import io.github.astrapi69.model.api.IModel;
-import io.github.astrapi69.swing.table.GenericJXTable;
+import io.github.astrapi69.swing.table.GenericJTable;
 import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
-import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
+import io.github.astrapi69.swing.table.shuffle.GenericShuffleJTable;
 import io.github.astrapi69.test.object.Permission;
-import io.github.astrapi69.window.adapter.CloseWindow;
+import io.github.astrapi69.awt.window.adapter.CloseWindow;
 
 public class DemoPermissionsShuffleTablePanel extends ShuffleTablePanel<Permission>
 	implements
@@ -122,16 +121,16 @@ public class DemoPermissionsShuffleTablePanel extends ShuffleTablePanel<Permissi
 	@Override
 	protected void onInitializeComponents()
 	{
-		this.btnAddAll = new JXButton("Add all >>");
+		this.btnAddAll = new JButton("Add all >>");
 		this.btnAddAll.addActionListener(this);
-		this.btnAdd = new JXButton("Add >");
+		this.btnAdd = new JButton("Add >");
 		this.btnAdd.addActionListener(this);
-		this.btnRemoveAll = new JXButton("<< Remove all");
+		this.btnRemoveAll = new JButton("<< Remove all");
 		this.btnRemoveAll.addActionListener(this);
-		this.btnRemove = new JXButton("< Remove");
+		this.btnRemove = new JButton("< Remove");
 		this.btnRemove.addActionListener(this);
-		this.lblAvailableElements = new JXLabel("Available permissions:");
-		this.lblSelectedElements = new JXLabel("Selected permissions:");
+		this.lblAvailableElements = new JLabel("Available permissions:");
+		this.lblSelectedElements = new JLabel("Selected permissions:");
 		this.scrPnTblAvailableElements = new JScrollPane();
 		this.scrPnTblSelectedElements = new JScrollPane();
 		// 2. Create a generic table model for the class Permission.
@@ -140,9 +139,9 @@ public class DemoPermissionsShuffleTablePanel extends ShuffleTablePanel<Permissi
 		permissionsTableModel.addList(getModelObject());
 		// 4. Create the generic table and associate with the generic table
 		// model.
-		this.tblAvailableElements = new GenericJXTable<>(permissionsTableModel);
-		this.tblSelectedElements = new GenericJXTable<>(new DemoPermissionsTableModel());
-		this.shuffleTable = new GenericShuffleJXTable<>(this.tblAvailableElements,
+		this.tblAvailableElements = new GenericJTable<>(permissionsTableModel);
+		this.tblSelectedElements = new GenericJTable<>(new DemoPermissionsTableModel());
+		this.shuffleTable = new GenericShuffleJTable<>(this.tblAvailableElements,
 			this.tblSelectedElements);
 		this.scrPnTblAvailableElements.setViewportView(this.tblAvailableElements);
 		this.scrPnTblSelectedElements.setViewportView(this.tblSelectedElements);

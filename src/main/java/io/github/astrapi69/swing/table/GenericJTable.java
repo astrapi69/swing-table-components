@@ -28,13 +28,12 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.Optional;
 
+import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.TableRowSorter;
 
 import lombok.Getter;
 import lombok.NonNull;
-
-import org.jdesktop.swingx.JXTable;
 
 import io.github.astrapi69.collection.list.ListFactory;
 import io.github.astrapi69.swing.listener.mouse.MouseDoubleClickListener;
@@ -47,7 +46,7 @@ import io.github.astrapi69.swing.table.model.GenericTableModel;
  *            the generic type of the model
  */
 @Getter
-public class GenericJXTable<T> extends JXTable
+public class GenericJTable<T> extends JTable
 {
 
 	/** The generic table model. */
@@ -62,7 +61,7 @@ public class GenericJXTable<T> extends JXTable
 	 * @param genericTableModel
 	 *            the generic table model
 	 */
-	public GenericJXTable(final @NonNull GenericTableModel<T> genericTableModel)
+	public GenericJTable(final @NonNull GenericTableModel<T> genericTableModel)
 	{
 		super();
 		this.genericTableModel = genericTableModel;

@@ -22,23 +22,23 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.swing.table.model.suffle.actions;
+package io.github.astrapi69.swing.table.model.suffle.action;
 
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
 import io.github.astrapi69.check.Check;
-import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
+import io.github.astrapi69.swing.table.shuffle.GenericShuffleJTable;
 
 public class AddAllAction<T> extends AbstractAction
 {
 
 	private static final long serialVersionUID = 1L;
 
-	private final GenericShuffleJXTable<T> shuffleJTable;
+	private final GenericShuffleJTable<T> shuffleJTable;
 
-	public AddAllAction(final GenericShuffleJXTable<T> shuffleJTable)
+	public AddAllAction(final GenericShuffleJTable<T> shuffleJTable)
 	{
 		Check.get().notNull(shuffleJTable, "shuffleJTable");
 		this.shuffleJTable = shuffleJTable;

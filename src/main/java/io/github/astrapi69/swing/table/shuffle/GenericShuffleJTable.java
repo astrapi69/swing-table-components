@@ -26,9 +26,9 @@ package io.github.astrapi69.swing.table.shuffle;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.swing.table.GenericJTable;
 import lombok.Getter;
 import io.github.astrapi69.check.Check;
-import io.github.astrapi69.swing.table.GenericJXTable;
 import io.github.astrapi69.swing.table.model.suffle.GenericShuffleTableModel;
 
 /**
@@ -37,7 +37,7 @@ import io.github.astrapi69.swing.table.model.suffle.GenericShuffleTableModel;
  * @param <T>
  *            the generic type of the model
  */
-public class GenericShuffleJXTable<T> implements Serializable
+public class GenericShuffleJTable<T> implements Serializable
 {
 
 	/** The Constant serialVersionUID. */
@@ -45,7 +45,7 @@ public class GenericShuffleJXTable<T> implements Serializable
 
 	/** The left table. */
 	@Getter
-	private final GenericJXTable<T> leftTable;
+	private final GenericJTable<T> leftTable;
 
 	/** The model. */
 	@Getter
@@ -53,18 +53,17 @@ public class GenericShuffleJXTable<T> implements Serializable
 
 	/** The right table. */
 	@Getter
-	private final GenericJXTable<T> rightTable;
+	private final GenericJTable<T> rightTable;
 
 	/**
-	 * Instantiates a new {@link GenericShuffleJXTable}
+	 * Instantiates a new {@link GenericShuffleJTable}
 	 *
 	 * @param leftTable
 	 *            the left table
 	 * @param rightTable
 	 *            the right table
 	 */
-	public GenericShuffleJXTable(final GenericJXTable<T> leftTable,
-		final GenericJXTable<T> rightTable)
+	public GenericShuffleJTable(final GenericJTable<T> leftTable, final GenericJTable<T> rightTable)
 	{
 		Check.get().notNull(leftTable, "leftTable").notNull(rightTable, "rightTable");
 		this.leftTable = leftTable;

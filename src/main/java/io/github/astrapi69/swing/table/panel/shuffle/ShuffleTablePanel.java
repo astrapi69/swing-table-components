@@ -27,19 +27,18 @@ package io.github.astrapi69.swing.table.panel.shuffle;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
+import io.github.astrapi69.swing.table.GenericJTable;
+import io.github.astrapi69.swing.table.shuffle.GenericShuffleJTable;
 import lombok.Getter;
 import lombok.Setter;
-
-import org.jdesktop.swingx.JXButton;
-import org.jdesktop.swingx.JXLabel;
 
 import io.github.astrapi69.model.GenericModel;
 import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
-import io.github.astrapi69.swing.table.GenericJXTable;
-import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
 
 @Getter
 @Setter
@@ -49,27 +48,27 @@ public class ShuffleTablePanel<T> extends BasePanel<List<T>>
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	protected JXButton btnAdd;
+	protected JButton btnAdd;
 
-	protected JXButton btnAddAll;
+	protected JButton btnAddAll;
 
-	protected JXButton btnRemove;
+	protected JButton btnRemove;
 
-	protected JXButton btnRemoveAll;
+	protected JButton btnRemoveAll;
 
-	protected JXLabel lblAvailableElements;
+	protected JLabel lblAvailableElements;
 
-	protected JXLabel lblSelectedElements;
+	protected JLabel lblSelectedElements;
 
 	protected JScrollPane scrPnTblAvailableElements;
 
 	protected JScrollPane scrPnTblSelectedElements;
 
-	protected GenericShuffleJXTable<T> shuffleTable;
+	protected GenericShuffleJTable<T> shuffleTable;
 
-	protected GenericJXTable<T> tblAvailableElements;
+	protected GenericJTable<T> tblAvailableElements;
 
-	protected GenericJXTable<T> tblSelectedElements;
+	protected GenericJTable<T> tblSelectedElements;
 
 	public ShuffleTablePanel()
 	{

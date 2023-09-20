@@ -34,7 +34,7 @@ import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
 import io.github.astrapi69.test.object.Permission;
-import io.github.astrapi69.window.adapter.CloseWindow;
+import io.github.astrapi69.awt.window.adapter.CloseWindow;
 
 public class DemoTablePanel extends TablePanel<Permission>
 {

@@ -41,14 +41,14 @@ import io.github.astrapi69.swing.table.editor.TableCellButtonEditor;
 import io.github.astrapi69.swing.table.model.TableColumnsModel;
 import io.github.astrapi69.swing.table.model.properties.StringKeyValueTableModel;
 import io.github.astrapi69.swing.table.renderer.TableCellButtonRenderer;
-import io.github.astrapi69.window.adapter.CloseWindow;
+import io.github.astrapi69.awt.window.adapter.CloseWindow;
 
 public class DemoTableWithButtonsPanel extends BasePanel<List<KeyValuePair<String, String>>>
 {
 
 	private static final long serialVersionUID = 1L;
 	private JScrollPane scrTable;
-	private GenericJXTable<KeyValuePair<String, String>> table;
+	private GenericJTable<KeyValuePair<String, String>> table;
 
 	public DemoTableWithButtonsPanel(final IModel<List<KeyValuePair<String, String>>> model)
 	{
@@ -85,7 +85,7 @@ public class DemoTableWithButtonsPanel extends BasePanel<List<KeyValuePair<Strin
 				.canEdit(new boolean[] { false, true })
 				.columnClasses(new Class<?>[] { String.class, String.class }).build());
 		tableModel.addList(getModelObject());
-		table = new GenericJXTable<>(tableModel);
+		table = new GenericJTable<>(tableModel);
 		final TableColumn valueColumn = table.getColumn("Value");
 		valueColumn.setCellRenderer(new TableCellButtonRenderer(null, null));
 		valueColumn.setCellEditor(new TableCellButtonEditor(new JCheckBox()));

@@ -22,23 +22,24 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.swing.table.model.suffle.actions;
+package io.github.astrapi69.swing.table.model.suffle.action;
 
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+import javax.swing.JOptionPane;
 
 import io.github.astrapi69.check.Check;
-import io.github.astrapi69.swing.table.shuffle.GenericShuffleJXTable;
+import io.github.astrapi69.swing.table.shuffle.GenericShuffleJTable;
 
-public class RemoveAllAction<T> extends AbstractAction
+public class RemoveAction<T> extends AbstractAction
 {
 
 	private static final long serialVersionUID = 1L;
 
-	private final GenericShuffleJXTable<T> shuffleJTable;
+	private final GenericShuffleJTable<T> shuffleJTable;
 
-	public RemoveAllAction(final GenericShuffleJXTable<T> shuffleJTable)
+	public RemoveAction(final GenericShuffleJTable<T> shuffleJTable)
 	{
 		Check.get().notNull(shuffleJTable, "shuffleJTable");
 		this.shuffleJTable = shuffleJTable;
@@ -47,7 +48,15 @@ public class RemoveAllAction<T> extends AbstractAction
 	@Override
 	public void actionPerformed(final ActionEvent e)
 	{
-		shuffleJTable.addAllRightRowsToLeftTable();
+		final int[] selectedRows = shuffleJTable.getRightTable().getSelectedRows();
+		if (selectedRows.length == 0)
+		{
+			JOptionPane.showMessageDialog(null, "You have to selected at least one row.");
+		}
+		else
+		{
+			shuffleJTable.shuffleSelectedRightRowsToLeftTable();
+		}
 	}
 
 }
