@@ -63,10 +63,17 @@ public class DemoCurrentThreadsTablePanel extends BasePanel<ThreadsTableModel>
 	}
 
 	@Override
+	@SuppressWarnings("deprecation")
 	protected void finalize() throws Throwable
 	{
-		super.finalize();
-		interrupt();
+		try
+		{
+			interrupt();
+		}
+		finally
+		{
+			super.finalize();
+		}
 	}
 
 	public void interrupt()

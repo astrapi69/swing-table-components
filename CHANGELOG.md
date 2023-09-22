@@ -4,7 +4,14 @@
 Version 3.1-SNAPSHOT
 -------------
 
+ADDED:
 
+- missing base package export in module-info.java file
+
+CHANGED:
+
+- update of dependency jobj-core to new major version 8
+- update of dependency jobj-reflect to new major version 2
 
 Version 3
 -------------

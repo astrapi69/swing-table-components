@@ -18,6 +18,6 @@ dependencies {
     testImplementation("io.github.astrapi69:file-worker:$fileWorkerVersion")
     testImplementation("io.github.astrapi69:throwable:$throwableVersion")
     testImplementation("org.meanbean:meanbean:$meanbeanVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

@@ -12,6 +12,7 @@ module swing.table.components.main
 	requires model.data;
 	requires swing.base.components.main;
 
+	exports io.github.astrapi69.swing.table;
 	exports io.github.astrapi69.swing.table.editor;
 	exports io.github.astrapi69.swing.table.model;
 	exports io.github.astrapi69.swing.table.model.dynamic;
