@@ -4,6 +4,11 @@
 Version 3.2-SNAPSHOT
 -------------
 
+
+ADDED:
+
+- new delegate method deselectAll in class GenericJTable
+
 Version 3.1
 -------------
 

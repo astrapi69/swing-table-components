@@ -320,4 +320,13 @@ public class GenericJTable<T> extends JTable
 		getGenericTableModel().addList(list);
 	}
 
+	/**
+	 * This method deselects all selected rows and columns. It delegates to the method
+	 * <code>clearSelection</code>
+	 */
+	public void deselectAll()
+	{
+		this.clearSelection();
+	}
+
 }
