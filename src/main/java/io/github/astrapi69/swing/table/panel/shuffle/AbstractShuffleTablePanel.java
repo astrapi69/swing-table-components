@@ -35,18 +35,18 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 
-import io.github.astrapi69.swing.menu.factory.JPopupMenuFactory;
-import io.github.astrapi69.swing.table.GenericJTable;
-import io.github.astrapi69.swing.table.shuffle.GenericShuffleJTable;
-import lombok.Getter;
 import io.github.astrapi69.model.GenericModel;
 import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
+import io.github.astrapi69.swing.menu.factory.JPopupMenuFactory;
+import io.github.astrapi69.swing.table.GenericJTable;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
 import io.github.astrapi69.swing.table.model.suffle.action.AddAction;
 import io.github.astrapi69.swing.table.model.suffle.action.AddAllAction;
 import io.github.astrapi69.swing.table.model.suffle.action.RemoveAction;
 import io.github.astrapi69.swing.table.model.suffle.action.RemoveAllAction;
+import io.github.astrapi69.swing.table.shuffle.GenericShuffleJTable;
+import lombok.Getter;
 
 
 /**

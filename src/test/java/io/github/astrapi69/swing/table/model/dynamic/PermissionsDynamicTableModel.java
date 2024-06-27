@@ -26,8 +26,8 @@ package io.github.astrapi69.swing.table.model.dynamic;
 
 import java.util.Optional;
 
-import lombok.NonNull;
 import io.github.astrapi69.test.object.Permission;
+import lombok.NonNull;
 
 /**
  * The class PermissionsDynamicTableModel

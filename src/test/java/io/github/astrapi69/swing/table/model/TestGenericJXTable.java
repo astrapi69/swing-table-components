@@ -31,11 +31,11 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
+import io.github.astrapi69.awt.window.adapter.CloseWindow;
 import io.github.astrapi69.swing.listener.mouse.MouseDoubleClickListener;
 import io.github.astrapi69.swing.table.GenericJTable;
-import io.github.astrapi69.test.object.factory.TestPermissionFactory;
 import io.github.astrapi69.test.object.Permission;
-import io.github.astrapi69.awt.window.adapter.CloseWindow;
+import io.github.astrapi69.test.object.factory.TestPermissionFactory;
 
 /**
  * The class TestGenericJXTable.

@@ -37,13 +37,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
+import io.github.astrapi69.awt.window.adapter.CloseWindow;
 import io.github.astrapi69.model.BaseModel;
 import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.table.GenericJTable;
 import io.github.astrapi69.swing.table.model.DemoPermissionsTableModel;
 import io.github.astrapi69.swing.table.shuffle.GenericShuffleJTable;
 import io.github.astrapi69.test.object.Permission;
-import io.github.astrapi69.awt.window.adapter.CloseWindow;
 
 public class DemoPermissionsShuffleTablePanel extends ShuffleTablePanel<Permission>
 	implements

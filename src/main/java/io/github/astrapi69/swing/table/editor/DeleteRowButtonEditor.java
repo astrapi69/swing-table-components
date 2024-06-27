@@ -34,10 +34,10 @@ import javax.swing.JCheckBox;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
 
+import io.github.astrapi69.swing.table.model.GenericTableModel;
 import lombok.AccessLevel;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-import io.github.astrapi69.swing.table.model.GenericTableModel;
 
 /**
  * The class {@link DeleteRowButtonEditor}

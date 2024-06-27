@@ -233,4 +233,3 @@ public class PropertiesTableModel extends AbstractTableModel
 	}
 
 }
-

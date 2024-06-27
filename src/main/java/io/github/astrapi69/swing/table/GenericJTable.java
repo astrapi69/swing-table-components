@@ -32,12 +32,11 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.TableRowSorter;
 
-import lombok.Getter;
-import lombok.NonNull;
-
 import io.github.astrapi69.collection.list.ListFactory;
 import io.github.astrapi69.swing.listener.mouse.MouseDoubleClickListener;
 import io.github.astrapi69.swing.table.model.GenericTableModel;
+import lombok.Getter;
+import lombok.NonNull;
 
 /**
  * The class GenericJXTable.

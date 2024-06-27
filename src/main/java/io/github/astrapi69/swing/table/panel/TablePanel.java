@@ -30,13 +30,13 @@ import java.util.List;
 
 import javax.swing.JScrollPane;
 
-import lombok.Getter;
 import io.github.astrapi69.model.GenericModel;
 import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
 import io.github.astrapi69.swing.component.factory.SwingContainerFactory;
-import io.github.astrapi69.swing.table.model.GenericTableModel;
 import io.github.astrapi69.swing.table.GenericJTable;
+import io.github.astrapi69.swing.table.model.GenericTableModel;
+import lombok.Getter;
 
 /**
  * The class {@link TablePanel}.

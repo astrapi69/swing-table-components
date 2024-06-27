@@ -26,10 +26,10 @@ package io.github.astrapi69.swing.table.shuffle;
 
 import java.io.Serializable;
 
-import io.github.astrapi69.swing.table.GenericJTable;
-import lombok.Getter;
 import io.github.astrapi69.check.Check;
+import io.github.astrapi69.swing.table.GenericJTable;
 import io.github.astrapi69.swing.table.model.suffle.GenericShuffleTableModel;
+import lombok.Getter;
 
 /**
  * The class GenericShuffleJXTable.

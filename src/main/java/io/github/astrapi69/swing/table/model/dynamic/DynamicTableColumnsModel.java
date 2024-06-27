@@ -26,13 +26,12 @@ package io.github.astrapi69.swing.table.model.dynamic;
 
 import java.lang.reflect.Field;
 
-import lombok.Data;
-import lombok.NonNull;
-
 import org.apache.commons.lang3.StringUtils;
 
 import io.github.astrapi69.collection.list.ListFactory;
 import io.github.astrapi69.reflection.ReflectionExtensions;
+import lombok.Data;
+import lombok.NonNull;
 
 /**
  * The class {@link DynamicTableColumnsModel} encapsulates the column data for a table model that
