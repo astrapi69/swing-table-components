@@ -9,6 +9,11 @@ ADDED:
 - new libs.versions.toml file for new automatic catalog versions update
 - new delegate method deselectAll in class GenericJTable
 
+CHANGED:
+
+- update gradle to new version 8.8
+- update of gradle-plugin dependency with id 'com.diffplug.spotless' to new beta version 7.0.0.BETA1
+
 Version 3.1
 -------------
 

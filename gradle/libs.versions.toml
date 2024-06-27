@@ -1,45 +1,45 @@
 [versions]
-lombok-version = "1.18.30"
-commons-lang3-version = "3.13.0"
-swing-base-components-version = "4.1"
-model-data-version = "3.1"
-menu-action-version = "3.3"
-silly-collection-version = "27"
-silly-bean-version = "2"
-jobj-core-version = "8"
-jobj-reflect-version = "2"
-test-object-version = "7.2"
-awt-extensions-version = "1.1"
-silly-io-version = "2.2"
-file-worker-version = "17"
-throwable-version = "2.3"
-meanbean-version = "2.0.3"
-junit-jupiter-version = "5.10.0"
+awt-extensions-version = "1.2"
+commons-lang3-version = "3.14.0"
+file-worker-version = "17.2"
 gradle-plugin-grgit-version = "5.2.2"
 gradle-plugin-license-version = "0.16.1"
 gradle-plugin-lombok-version = "8.6"
 gradle-plugin-spotless-version = "7.0.0.BETA1"
 gradle-plugin-version-catalog-update-version = "0.8.4"
 gradle-plugin-versions-version = "0.51.0"
+jobj-core-version = "8.2"
+jobj-reflect-version = "2.4"
+junit-jupiter-version = "5.11.0-M2"
+lombok-version = "1.18.32"
+meanbean-version = "2.0.3"
+menu-action-version = "3.4"
+model-data-version = "3.1"
+silly-bean-version = "2"
+silly-collection-version = "27.1"
+silly-io-version = "3.1"
+swing-base-components-version = "4.2"
+test-object-version = "8.2"
+throwable-version = "2.3"
 
 [libraries]
-lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version"}
-commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3-version"}
-swing-base-components = { module = "io.github.astrapi69:swing-base-components", version.ref = "swing-base-components-version"}
-model-data = { module = "io.github.astrapi69:model-data", version.ref = "model-data-version"}
-menu-action = { module = "io.github.astrapi69:menu-action", version.ref = "menu-action-version"}
-silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version"}
-silly-bean = { module = "io.github.astrapi69:silly-bean", version.ref = "silly-bean-version"}
-jobj-core = { module = "io.github.astrapi69:jobj-core", version.ref = "jobj-core-version"}
-jobj-reflect = { module = "io.github.astrapi69:jobj-reflect", version.ref = "jobj-reflect-version"}
-test-object = { module = "io.github.astrapi69:test-object", version.ref = "test-object-version"}
-awt-extensions = { module = "io.github.astrapi69:awt-extensions", version.ref = "awt-extensions-version"}
-silly-io = { module = "io.github.astrapi69:silly-io", version.ref = "silly-io-version"}
-file-worker = { module = "io.github.astrapi69:file-worker", version.ref = "file-worker-version"}
-throwable = { module = "io.github.astrapi69:throwable", version.ref = "throwable-version"}
-meanbean = { module = "org.meanbean:meanbean", version.ref = "meanbean-version"}
-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version"}
-junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher"}
+awt-extensions = { module = "io.github.astrapi69:awt-extensions", version.ref = "awt-extensions-version" }
+commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3-version" }
+file-worker = { module = "io.github.astrapi69:file-worker", version.ref = "file-worker-version" }
+jobj-core = { module = "io.github.astrapi69:jobj-core", version.ref = "jobj-core-version" }
+jobj-reflect = { module = "io.github.astrapi69:jobj-reflect", version.ref = "jobj-reflect-version" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version" }
+meanbean = { module = "org.meanbean:meanbean", version.ref = "meanbean-version" }
+menu-action = { module = "io.github.astrapi69:menu-action", version.ref = "menu-action-version" }
+model-data = { module = "io.github.astrapi69:model-data", version.ref = "model-data-version" }
+silly-bean = { module = "io.github.astrapi69:silly-bean", version.ref = "silly-bean-version" }
+silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version" }
+silly-io = { module = "io.github.astrapi69:silly-io", version.ref = "silly-io-version" }
+swing-base-components = { module = "io.github.astrapi69:swing-base-components", version.ref = "swing-base-components-version" }
+test-object = { module = "io.github.astrapi69:test-object", version.ref = "test-object-version" }
+throwable = { module = "io.github.astrapi69:throwable", version.ref = "throwable-version" }
 
 [bundles]
 unit-testing = [
@@ -55,4 +55,3 @@ license-gradle-plugin = { id = "com.github.hierynomus.license", version.ref = "g
 lombok-plugin = { id = "io.freefair.lombok", version.ref = "gradle-plugin-lombok-version" }
 spotless-plugin-gradle = { id = "com.diffplug.spotless", version.ref = "gradle-plugin-spotless-version" }
 version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "gradle-plugin-version-catalog-update-version" }
-
