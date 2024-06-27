@@ -1,23 +1,24 @@
-
 dependencies {
-    compileOnly("org.projectlombok:lombok:$lombokVersion")
-    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
-    implementation("org.apache.commons:commons-lang3:$commonsLang3Version")
-    implementation("io.github.astrapi69:swing-base-components:$swingBaseComponentsVersion")
-    implementation("io.github.astrapi69:model-data:$modelDataVersion")
-    implementation("io.github.astrapi69:menu-action:$menuActionVersion")
-    implementation("io.github.astrapi69:silly-collection:$sillyCollectionVersion")
-    implementation("io.github.astrapi69:silly-bean:$sillyBeanVersion")
-    implementation("io.github.astrapi69:jobj-core:$jobjCoreVersion")
-    implementation("io.github.astrapi69:jobj-reflect:$jobjReflectVersion")
-    testCompileOnly("org.projectlombok:lombok:$lombokVersion")
-    testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
-    testImplementation("io.github.astrapi69:test-object:$testObjectVersion")
-    testImplementation("io.github.astrapi69:awt-extensions:$awtExtensionsVersion")
-    testImplementation("io.github.astrapi69:silly-io:$sillyIoVersion")
-    testImplementation("io.github.astrapi69:file-worker:$fileWorkerVersion")
-    testImplementation("io.github.astrapi69:throwable:$throwableVersion")
-    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    testCompileOnly libs.lombok
+    testAnnotationProcessor libs.lombok
+
+    implementation libs.commons.lang3
+    implementation libs.swing.base.components
+    implementation libs.model.data
+    implementation libs.menu.action
+    implementation libs.silly.collection
+    implementation libs.silly.bean
+    implementation libs.jobj.core
+    implementation libs.jobj.reflect
+    testImplementation libs.test.object
+    testImplementation libs.awt.extensions
+    testImplementation libs.silly.io
+    testImplementation libs.file.worker
+    testImplementation libs.throwable
+    // Note: use of bundles...
+    testImplementation libs.bundles.unit.testing
+    testRuntimeOnly libs.junit.platform.launcher
 }
