@@ -13,6 +13,7 @@ CHANGED:
 
 - update gradle to new version 8.8
 - update of gradle-plugin dependency with id 'com.diffplug.spotless' to new beta version 7.0.0.BETA1
+- replaced obsolete package.html with package-info.java files
 
 Version 3.1
 -------------
