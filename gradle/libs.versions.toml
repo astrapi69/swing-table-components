@@ -1,26 +1,24 @@
 [versions]
-awt-extensions-version = "1.2"
-commons-lang3-version = "3.14.0"
-file-worker-version = "17.2"
-gradle-plugin-grgit-version = "5.2.2"
-gradle-plugin-license-version = "0.16.1"
-gradle-plugin-lombok-version = "8.6"
-gradle-plugin-spotless-version = "7.0.0.BETA1"
-gradle-plugin-version-catalog-update-version = "0.8.4"
-gradle-plugin-versions-version = "0.51.0"
-jobj-core-version = "8.2"
+awt-extensions-version = "2.0"
+commons-lang3-version = "3.20.0"
+file-worker-version = "19.0"
+gradle-plugin-lombok-version = "9.5.0"
+gradle-plugin-spotless-version = "8.10.0"
+gradle-plugin-version-catalog-update-version = "1.1.1"
+gradle-plugin-versions-version = "0.61.0"
+jobj-core-version = "9.1"
 jobj-reflect-version = "2.4"
 junit-jupiter-version = "5.11.0-M2"
-lombok-version = "1.18.32"
+lombok-version = "1.18.46"
 meanbean-version = "2.0.3"
-menu-action-version = "3.4"
-model-data-version = "3.1"
-silly-bean-version = "2"
-silly-collection-version = "27.1"
-silly-io-version = "3.1"
-swing-base-components-version = "4.2"
-test-object-version = "8.2"
-throwable-version = "2.3"
+menu-action-version = "4.1"
+model-data-version = "3.2.1"
+silly-bean-version = "3.0"
+silly-collection-version = "28.1"
+silly-io-version = "3.6"
+swing-base-components-version = "5.1"
+test-object-version = "9"
+throwable-version = "3"
 
 [libraries]
 awt-extensions = { module = "io.github.astrapi69:awt-extensions", version.ref = "awt-extensions-version" }
@@ -50,8 +48,6 @@ unit-testing = [
 
 [plugins]
 gradle-versions-plugin = { id = "com.github.ben-manes.versions", version.ref = "gradle-plugin-versions-version" }
-grgit-gradle = { id = "org.ajoberstar.grgit", version.ref = "gradle-plugin-grgit-version" }
-license-gradle-plugin = { id = "com.github.hierynomus.license", version.ref = "gradle-plugin-license-version" }
 lombok-plugin = { id = "io.freefair.lombok", version.ref = "gradle-plugin-lombok-version" }
 spotless-plugin-gradle = { id = "com.diffplug.spotless", version.ref = "gradle-plugin-spotless-version" }
-version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "gradle-plugin-version-catalog-update-version" }
+versionCatalogUpdate = { id = "nl.littlerobots.version-catalog-update", version.ref = "gradle-plugin-version-catalog-update-version" }

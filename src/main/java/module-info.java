@@ -1,16 +1,16 @@
 module swing.table.components.main
 {
 	requires lombok;
-	requires jobj.core.main;
+	requires io.github.astrapisixtynine.jobj.core;
 	requires java.desktop;
-	requires silly.collection;
-	requires menu.actions.main;
+	requires io.github.astrapisixtynine.silly.collection;
+	requires io.github.astrapisixtynine.menu.action;
 	requires java.logging;
-	requires silly.bean.main;
+	requires io.github.astrapisixtynine.silly.bean;
 	requires org.apache.commons.lang3;
 	requires jobj.reflect.main;
 	requires model.data;
-	requires swing.base.components.main;
+	requires io.github.astrapisixtynine.swing.base.components;
 
 	exports io.github.astrapi69.swing.table;
 	exports io.github.astrapi69.swing.table.editor;
