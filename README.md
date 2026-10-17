@@ -168,3 +168,12 @@ Do not hesitate to contact the swing-table-components developers with your quest
 ## Similar projects
 
 ## Credits
+
+## Git hooks
+
+The repository's git hooks live in `.githooks`: `commit-msg` where present, and `pre-commit`, which refuses a
+commit whose files Spotless would format. Activate them once per clone or worktree:
+
+```bash
+git config core.hooksPath .githooks
+```
