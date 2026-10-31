@@ -4,12 +4,11 @@
 
 [![Java CI with Gradle](https://github.com/astrapi69/swing-table-components/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/swing-table-components/actions/workflows/gradle.yml)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/swing-table-components.svg?style=flat)](https://github.com/astrapi69/swing-table-components/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/swing-table-components/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/swing-table-components)
-[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/swing-table-components.svg)](http://www.javadoc.io/doc/io.github.astrapi69/swing-table-components)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.astrapi69/swing-table-components)](https://central.sonatype.com/artifact/io.github.astrapi69/swing-table-components)
+[![Javadocs](https://javadoc.io/badge2/io.github.astrapi69/swing-table-components/javadoc.svg)](http://www.javadoc.io/doc/io.github.astrapi69/swing-table-components)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 [![Hits Of Code](https://hitsofcode.com/github/astrapi69/swing-table-components?branch=main)](https://hitsofcode.com/github/astrapi69/swing-table-components/view?branch=main)
-[![Lines Of Code](https://tokei.rs/b1/github/astrapi69/swing-table-components)](https://github.com/astrapi69/swing-table-components)
 
 </div>
 
@@ -54,8 +53,7 @@ then add the dependency to the dependencies area
 
 ## Maven dependency
 
-Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~swing-table-components~~~) for latest snapshots and releases.
+The library is on Maven Central. Check out [Maven Central](https://central.sonatype.com/artifact/io.github.astrapi69/swing-table-components) for the latest release.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core
 functionality of swing-table-components:
