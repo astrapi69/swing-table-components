@@ -1,6 +1,20 @@
 ## Change log
 ----------------------
 
+Version 3.3-SNAPSHOT
+-------------
+
+CHANGED:
+
+- releases go to Maven Central through the Central Portal, as in the rest of the family: the
+  `com.gradleup.nmcp` plugin uploads, the maintainer releases each deployment in the Portal, and a
+  `RELEASE-*` tag runs `publish.yml`, which signs with the signing subkey that the secret
+  `GPG_KEY_ID` names. An upload leaves only from CI, a release only from its tag; a half-configured
+  key and a release without a key are refused. The OSSRH staging API settings, the switch that held
+  the checksums to md5 and sha1, and the Makefile targets `central-upload`, `central-list`,
+  `central-upload-repository`, `central-drop`, `publish` and `release` are gone; `make tag-release`
+  refuses a SNAPSHOT version and asks for `CONFIRM=yes` (#17)
+
 Version 3.2-SNAPSHOT
 -------------
 
