@@ -4,12 +4,11 @@
 
 [![Java CI with Gradle](https://github.com/astrapi69/swing-table-components/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/swing-table-components/actions/workflows/gradle.yml)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/swing-table-components.svg?style=flat)](https://github.com/astrapi69/swing-table-components/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/swing-table-components/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/swing-table-components)
-[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/swing-table-components.svg)](http://www.javadoc.io/doc/io.github.astrapi69/swing-table-components)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.astrapi69/swing-table-components)](https://central.sonatype.com/artifact/io.github.astrapi69/swing-table-components)
+[![Javadocs](https://javadoc.io/badge2/io.github.astrapi69/swing-table-components/javadoc.svg)](http://www.javadoc.io/doc/io.github.astrapi69/swing-table-components)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 [![Hits Of Code](https://hitsofcode.com/github/astrapi69/swing-table-components?branch=main)](https://hitsofcode.com/github/astrapi69/swing-table-components/view?branch=main)
-[![Lines Of Code](https://tokei.rs/b1/github/astrapi69/swing-table-components)](https://github.com/astrapi69/swing-table-components)
 
 </div>
 
@@ -54,8 +53,7 @@ then add the dependency to the dependencies area
 
 ## Maven dependency
 
-Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~swing-table-components~~~) for latest snapshots and releases.
+The library is on Maven Central. Check out [Maven Central](https://central.sonatype.com/artifact/io.github.astrapi69/swing-table-components) for the latest release.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core
 functionality of swing-table-components:
@@ -80,65 +78,13 @@ Than you can add the dependency to your dependencies:
             ...
         </dependencies>
 
-# Donations
+## Support this project
 
-This project is kept as an open source product and relies on contributions to remain being
-developed. If you like this library, please consider a donation
+If swing-table-components is useful to you, a star on [GitHub](https://github.com/astrapi69/swing-table-components) helps others find it.
+Sharing it or reporting a bug helps just as much.
 
-over paypal:
-<br>
-<br>
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MJ7V43GU2H386" target="_blank">
-    <img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif"
-         alt="PayPal this"
-         title="PayPal – The safer, easier way to pay online!"
-         style="border: none" />
-</a>
-<br>
-<br>
-or over bitcoin(BTC) with this address:
-
-bc1ql2y99q7e8psndhcc3gferk03esw3qqf677rhjy
-
-<img src="https://github.com/astrapi69/jgeohash/blob/master/src/main/resources/img/bc1ql2y99q7e8psndhcc3gferk03esw3qqf677rhjy.png"
-alt="Donation Bitcoin Wallet" width="250"/>
-
-or over FIO with this address:
-
-FIO7tFMUVAA9cHiPPqKMfMXiSxHrbpiFyRYqTketNuM67aULuwjop
-
-<img src="https://github.com/astrapi69/jgeohash/blob/master/src/main/resources/img/FIO7tFMUVAA9cHiPPqKMfMXiSxHrbpiFyRYqTketNuM67aULuwjop.png"
-alt="Donation FIO Wallet" width="250"/>
-
-or over Ethereum(ETH) with:
-
-0xc057D159D3C8f3311E73568b334FF6fE82EB2b7D
-
-<img src="https://github.com/astrapi69/jgeohash/blob/master/src/main/resources/img/0xc057D159D3C8f3311E73568b334FF6fE82EB2b7D.png"
-alt="Donation Ethereum Wallet" width="250"/>
-
-or over Ethereum Classic(ETC) with:
-
-0xF708cA86D86C246B69c3F4BAe431eBbe0c2bfddD
-
-<img src="https://github.com/astrapi69/jgeohash/blob/master/src/main/resources/img/0xF708cA86D86C246B69c3F4BAe431eBbe0c2bfddD.png"
-alt="Donation Ethereum Classic Wallet" width="250"/>
-
-or over Dogecoin(DOGE) with:
-
-D5yi4Um8cpakd6yPRm2hGWuQ5nrVzhSSW1
-
-<img src="https://github.com/astrapi69/jgeohash/blob/master/src/main/resources/img/D5yi4Um8cpakd6yPRm2hGWuQ5nrVzhSSW1.png"
-alt="Donation Dogecoin Wallet" width="250"/>
-
-or over Monero(XMR) with:
-
-49bqeRQ7Bf49oJFVC72pqpe5hFbb62pfXDYPdLsadGGF81KZW2ZfrPZ8PbAVu5X2v1TYAspeczMya3cYQysNS4usRRPQHVw
-
-<img src="https://github.com/astrapi69/jgeohash/blob/master/src/main/resources/img/49bqeRQ7Bf49oJFVC72pqpe5hFbb62pfXDYPdLsadGGF81KZW2ZfrPZ8PbAVu5X2v1TYAspeczMya3cYQysNS4usRRPQHVw.png"
-alt="Donation Monero Wallet" width="250"/>
-
-or over the donation buttons at the top.
+If you would like to contribute financially, the channels are on the repository's Sponsor button, which
+reads [.github/FUNDING.yml](.github/FUNDING.yml): GitHub Sponsors, Liberapay, Ko-fi and PayPal.
 
 ## Semantic Versioning
 
@@ -168,3 +114,12 @@ Do not hesitate to contact the swing-table-components developers with your quest
 ## Similar projects
 
 ## Credits
+
+## Git hooks
+
+The repository's git hooks live in `.githooks`: `commit-msg` where present, and `pre-commit`, which refuses a
+commit whose files Spotless would format. Activate them once per clone or worktree:
+
+```bash
+git config core.hooksPath .githooks
+```
