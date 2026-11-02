@@ -1,11 +1,27 @@
 ## Change log
 ----------------------
 
-Version 3.3-SNAPSHOT
+Version 4.0-SNAPSHOT
 -------------
+
+BREAKING:
+
+- Java 25 is the minimum, up from 17: the family builds, tests and releases on JDK 25
+  (astrapi69/mystic-crypt#234), so the next release is 4.0 instead of 3.3 (#13)
 
 CHANGED:
 
+- built with Gradle 9.8.2, its wrapper jar checked against the published
+  `gradle-9.8.2-wrapper.jar.sha256`; `.gitattributes` keeps `gradlew` with LF and `*.bat` with CRLF
+  line endings, and the jar binary (#13)
+- `versionCatalogUpdate` chooses versions through a selector of its own: a stable version moves only to
+  a stable one, and nothing to a snapshot; meanbean stays at 2.0.3, as its 3.0.0-M9 is a milestone (#13)
+- dependencies raised by `versionCatalogUpdate`: commons-lang3 3.20.0 -> 3.21.0, lombok 1.18.46 ->
+  1.18.48, menu-action 4.1 -> 5.1, silly-collection 28.1 -> 28.2, swing-base-components 5.1 -> 5.2,
+  and for the tests file-worker 19.0 -> 20.0, junit-jupiter 5.11.0-M2 -> 6.1.3, silly-io 3.6 -> 4.0,
+  test-object 9 -> 9.1; the plugins spotless 8.10.0 -> 8.10.4, lombok 9.5.0 -> 9.8.3, versions 0.61.0
+  -> 0.67.0 under its new id `io.github.ben-manes.versions`, and version-catalog-update 1.1.1 -> 1.1.2.
+  jobj-reflect stays at 2.4 until its release 3 (#14) (#13)
 - releases go to Maven Central through the Central Portal, as in the rest of the family: the
   `com.gradleup.nmcp` plugin uploads, the maintainer releases each deployment in the Portal, and a
   `RELEASE-*` tag runs `publish.yml`, which signs with the signing subkey that the secret
