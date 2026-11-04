@@ -1,6 +1,6 @@
 module swing.table.components.main
 {
-	requires lombok;
+	requires static lombok;
 	requires io.github.astrapisixtynine.jobj.core;
 	requires java.desktop;
 	requires io.github.astrapisixtynine.silly.collection;
@@ -8,7 +8,7 @@ module swing.table.components.main
 	requires java.logging;
 	requires io.github.astrapisixtynine.silly.bean;
 	requires org.apache.commons.lang3;
-	requires jobj.reflect.main;
+	requires io.github.astrapisixtynine.jobj.reflect;
 	requires model.data;
 	requires io.github.astrapisixtynine.swing.base.components;
 
