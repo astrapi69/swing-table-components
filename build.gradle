@@ -16,6 +16,7 @@ plugins {
     alias(libs.plugins.gradle.versions.plugin)
     alias(libs.plugins.nmcp.gradle.plugin)
     alias(libs.plugins.spotless.plugin.gradle)
+    alias(libs.plugins.test.results.complete)
     alias(libs.plugins.versionCatalogUpdate)
 }
 
@@ -44,5 +45,3 @@ tasks.withType(JavaCompile).configureEach { javaCompiler ->
 tasks.named("test") {
     it.mustRunAfter(tasks.named("jar"))
 }
-
-apply from: "gradle/test-results-complete.gradle"
