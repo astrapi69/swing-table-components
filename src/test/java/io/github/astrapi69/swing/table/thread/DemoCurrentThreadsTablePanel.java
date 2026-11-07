@@ -62,20 +62,10 @@ public class DemoCurrentThreadsTablePanel extends BasePanel<ThreadsTableModel>
 		super(model);
 	}
 
-	@Override
-	@SuppressWarnings("deprecation")
-	protected void finalize() throws Throwable
-	{
-		try
-		{
-			interrupt();
-		}
-		finally
-		{
-			super.finalize();
-		}
-	}
-
+	/**
+	 * Stops the thread of the table model that updates the listed threads. The launcher calls it
+	 * when its window closes, in place of the finalizer this demo once relied on (#19)
+	 */
 	public void interrupt()
 	{
 		getModelObject().interrupt();
