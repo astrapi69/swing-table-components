@@ -87,7 +87,7 @@ public class DemoCurrentThreadsTablePanel extends BasePanel<ThreadsTableModel>
 	@Override
 	protected void onInitializeLayout()
 	{
-		super.onInitializeComponents();
+		super.onInitializeLayout();
 		setLayout(new BorderLayout());
 		add(scrThreadTable, BorderLayout.CENTER);
 	}
