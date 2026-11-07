@@ -24,19 +24,38 @@
  */
 package io.github.astrapi69.swing.table.thread;
 
+import java.awt.event.WindowEvent;
+
 import javax.swing.JFrame;
 
 import io.github.astrapi69.awt.window.adapter.CloseWindow;
 
-
+/**
+ * Launches {@link DemoCurrentThreadsTablePanel} in a frame
+ */
 public class TestCurrentThreadsTablePanel
 {
 
+	/**
+	 * Shows the demo panel; closing the window stops the panel's update thread before
+	 * {@link CloseWindow} exits the application
+	 *
+	 * @param args
+	 *            not used
+	 */
 	public static void main(final String[] args)
 	{
 		final JFrame frame = new JFrame();
 		final DemoCurrentThreadsTablePanel viewer = new DemoCurrentThreadsTablePanel();
-		frame.addWindowListener(new CloseWindow());
+		frame.addWindowListener(new CloseWindow()
+		{
+			@Override
+			public void windowClosing(final WindowEvent event)
+			{
+				viewer.interrupt();
+				super.windowClosing(event);
+			}
+		});
 
 		frame.setContentPane(viewer);
 		frame.setSize(500, 300);
