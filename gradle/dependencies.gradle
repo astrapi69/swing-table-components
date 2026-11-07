@@ -10,7 +10,6 @@ dependencies {
     implementation libs.model.data
     implementation libs.menu.action
     implementation libs.silly.collection
-    implementation libs.silly.bean
     implementation libs.jobj.core
     implementation libs.jobj.reflect
     testImplementation libs.test.object

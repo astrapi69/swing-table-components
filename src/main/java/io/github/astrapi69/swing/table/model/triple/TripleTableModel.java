@@ -24,13 +24,19 @@
  */
 package io.github.astrapi69.swing.table.model.triple;
 
-import io.github.astrapi69.collection.pair.Triple;
 import io.github.astrapi69.swing.table.model.BaseTableModel;
 import io.github.astrapi69.swing.table.model.TableColumnsModel;
 
 /**
  * The class {@link TripleTableModel} that lists three columns with generic content that can be
- * defined for every column.
+ * defined for every column, each row a {@link Triple}.
+ *
+ * @param <L>
+ *            the type of the left column
+ * @param <M>
+ *            the type of the middle column
+ * @param <R>
+ *            the type of the right column
  */
 public class TripleTableModel<L, M, R> extends BaseTableModel<Triple<L, M, R>>
 {
@@ -69,11 +75,11 @@ public class TripleTableModel<L, M, R> extends BaseTableModel<Triple<L, M, R>>
 		switch (columnIndex)
 		{
 			case 0 :
-				return row.getLeft();
+				return row.left();
 			case 1 :
-				return row.getMiddle();
+				return row.middle();
 			case 2 :
-				return row.getRight();
+				return row.right();
 			default :
 				return null;
 		}

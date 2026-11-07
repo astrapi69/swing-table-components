@@ -27,6 +27,7 @@ package io.github.astrapi69.swing.table;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -34,7 +35,6 @@ import javax.swing.JScrollPane;
 import javax.swing.table.TableColumn;
 
 import io.github.astrapi69.awt.window.adapter.CloseWindow;
-import io.github.astrapi69.collection.pair.KeyValuePair;
 import io.github.astrapi69.model.GenericModel;
 import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.base.BasePanel;
@@ -43,24 +43,24 @@ import io.github.astrapi69.swing.table.model.TableColumnsModel;
 import io.github.astrapi69.swing.table.model.properties.StringKeyValueTableModel;
 import io.github.astrapi69.swing.table.renderer.TableCellButtonRenderer;
 
-public class DemoTableWithButtonsPanel extends BasePanel<List<KeyValuePair<String, String>>>
+public class DemoTableWithButtonsPanel extends BasePanel<List<Map.Entry<String, String>>>
 {
 
 	private static final long serialVersionUID = 1L;
 	private JScrollPane scrTable;
-	private GenericJTable<KeyValuePair<String, String>> table;
+	private GenericJTable<Map.Entry<String, String>> table;
 
-	public DemoTableWithButtonsPanel(final IModel<List<KeyValuePair<String, String>>> model)
+	public DemoTableWithButtonsPanel(final IModel<List<Map.Entry<String, String>>> model)
 	{
 		super(model);
 	}
 
 	public static void main(final String[] args)
 	{
-		final List<KeyValuePair<String, String>> list = new ArrayList<>();
-		list.add(KeyValuePair.<String, String> builder().key("foo").value("overview").build());
-		list.add(KeyValuePair.<String, String> builder().key("bar").value("overview").build());
-		list.add(KeyValuePair.<String, String> builder().key("bla").value("overview").build());
+		final List<Map.Entry<String, String>> list = new ArrayList<>();
+		list.add(Map.entry("foo", "overview"));
+		list.add(Map.entry("bar", "overview"));
+		list.add(Map.entry("bla", "overview"));
 
 		final DemoTableWithButtonsPanel panel = new DemoTableWithButtonsPanel(
 			GenericModel.ofList(list));

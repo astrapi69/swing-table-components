@@ -14,7 +14,6 @@ lombok-version = "1.18.48"
 meanbean-version = "2.0.3"
 menu-action-version = "5.1"
 model-data-version = "3.2.1"
-silly-bean-version = "3.0"
 silly-collection-version = "28.2"
 swing-base-components-version = "5.2.1"
 test-object-version = "9.1"
@@ -31,7 +30,6 @@ lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version" }
 meanbean = { module = "org.meanbean:meanbean", version.ref = "meanbean-version" }
 menu-action = { module = "io.github.astrapi69:menu-action", version.ref = "menu-action-version" }
 model-data = { module = "io.github.astrapi69:model-data", version.ref = "model-data-version" }
-silly-bean = { module = "io.github.astrapi69:silly-bean", version.ref = "silly-bean-version" }
 silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version" }
 swing-base-components = { module = "io.github.astrapi69:swing-base-components", version.ref = "swing-base-components-version" }
 test-object = { module = "io.github.astrapi69:test-object", version.ref = "test-object-version" }

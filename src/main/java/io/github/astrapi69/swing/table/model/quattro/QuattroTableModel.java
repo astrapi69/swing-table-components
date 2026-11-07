@@ -24,13 +24,21 @@
  */
 package io.github.astrapi69.swing.table.model.quattro;
 
-import io.github.astrapi69.collection.pair.Quattro;
 import io.github.astrapi69.swing.table.model.BaseTableModel;
 import io.github.astrapi69.swing.table.model.TableColumnsModel;
 
 /**
  * The class {@link QuattroTableModel} that lists four columns with generic content that can be
- * defined for every column.
+ * defined for every column, each row a {@link Quattro}.
+ *
+ * @param <TL>
+ *            the type of the top left column
+ * @param <TR>
+ *            the type of the top right column
+ * @param <BL>
+ *            the type of the bottom left column
+ * @param <BR>
+ *            the type of the bottom right column
  */
 public class QuattroTableModel<TL, TR, BL, BR> extends BaseTableModel<Quattro<TL, TR, BL, BR>>
 {
@@ -71,13 +79,13 @@ public class QuattroTableModel<TL, TR, BL, BR> extends BaseTableModel<Quattro<TL
 		switch (columnIndex)
 		{
 			case 0 :
-				return row.getTopLeft();
+				return row.topLeft();
 			case 1 :
-				return row.getTopRight();
+				return row.topRight();
 			case 2 :
-				return row.getBottomLeft();
+				return row.bottomLeft();
 			case 3 :
-				return row.getBottomRight();
+				return row.bottomRight();
 			default :
 				return null;
 		}
