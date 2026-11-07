@@ -37,8 +37,8 @@ public class QuattroTableModelTest
 
 	/**
 	 * Test that the model of the default constructor tells for each of its four columns whether a
-	 * cell is editable: the first three are, the fourth is not, because its editable flags have
-	 * only three entries
+	 * cell is editable: all four are, as in TripleTableModel; the fourth was not while its editable
+	 * flags had only three entries
 	 *
 	 * @param column
 	 *            the index of the column
@@ -46,7 +46,7 @@ public class QuattroTableModelTest
 	 *            whether a cell of the column is editable
 	 */
 	@ParameterizedTest(name = "column {0} editable: {1}")
-	@CsvSource({ "0, true", "1, true", "2, true", "3, false" })
+	@CsvSource({ "0, true", "1, true", "2, true", "3, true" })
 	public void testIsCellEditableOfTheDefaultColumns(final int column, final boolean editable)
 	{
 		final QuattroTableModel<String, String, String, String> model = new QuattroTableModel<>();
