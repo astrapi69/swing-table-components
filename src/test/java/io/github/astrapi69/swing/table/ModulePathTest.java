@@ -118,13 +118,9 @@ public class ModulePathTest
 			"io.github.astrapi69.swing.table.model.dynamic",
 			"io.github.astrapi69.swing.table.model.properties",
 			"io.github.astrapi69.swing.table.model.quattro",
-			"io.github.astrapi69.swing.table.model.suffle",
-			"io.github.astrapi69.swing.table.model.suffle.action",
 			"io.github.astrapi69.swing.table.model.thread",
-			"io.github.astrapi69.swing.table.model.triple", "io.github.astrapi69.swing.table.panel",
-			"io.github.astrapi69.swing.table.panel.shuffle",
-			"io.github.astrapi69.swing.table.renderer", "io.github.astrapi69.swing.table.shuffle"),
-			exported);
+			"io.github.astrapi69.swing.table.model.triple",
+			"io.github.astrapi69.swing.table.renderer"), exported);
 	}
 
 }

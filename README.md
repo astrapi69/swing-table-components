@@ -12,7 +12,9 @@
 
 </div>
 
-This repository provides table components like JXTable and ShuffleTable for swing applications.
+This repository provides table components for swing applications: `GenericJTable`, a sortable `JTable` over a
+generic table model, the table models it builds on (generic, dynamic, key-value, triple, quattro and threads), and
+cell editors and renderers with buttons and check boxes.
 
 > Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/astrapi69/swing-table-components" data-icon="octicon-star" aria-label="Star astrapi69/swing-table-components on GitHub">Star ⭐</a>
