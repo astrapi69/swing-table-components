@@ -1,7 +1,6 @@
 [versions]
 awt-extensions-version = "2.0"
 commons-lang3-version = "3.21.0"
-file-worker-version = "20.0"
 gradle-plugin-lombok-version = "9.8.3"
 gradle-plugin-nmcp-version = "1.6.2"
 gradle-plugin-own-display-version = "1.0"
@@ -17,7 +16,6 @@ menu-action-version = "5.1"
 model-data-version = "3.2.1"
 silly-bean-version = "3.0"
 silly-collection-version = "28.2"
-silly-io-version = "4.0"
 swing-base-components-version = "5.2.1"
 test-object-version = "9.1"
 throwable-version = "3"
@@ -25,7 +23,6 @@ throwable-version = "3"
 [libraries]
 awt-extensions = { module = "io.github.astrapi69:awt-extensions", version.ref = "awt-extensions-version" }
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3-version" }
-file-worker = { module = "io.github.astrapi69:file-worker", version.ref = "file-worker-version" }
 jobj-core = { module = "io.github.astrapi69:jobj-core", version.ref = "jobj-core-version" }
 jobj-reflect = { module = "io.github.astrapi69:jobj-reflect", version.ref = "jobj-reflect-version" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version" }
@@ -36,7 +33,6 @@ menu-action = { module = "io.github.astrapi69:menu-action", version.ref = "menu-
 model-data = { module = "io.github.astrapi69:model-data", version.ref = "model-data-version" }
 silly-bean = { module = "io.github.astrapi69:silly-bean", version.ref = "silly-bean-version" }
 silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version" }
-silly-io = { module = "io.github.astrapi69:silly-io", version.ref = "silly-io-version" }
 swing-base-components = { module = "io.github.astrapi69:swing-base-components", version.ref = "swing-base-components-version" }
 test-object = { module = "io.github.astrapi69:test-object", version.ref = "test-object-version" }
 throwable = { module = "io.github.astrapi69:throwable", version.ref = "throwable-version" }

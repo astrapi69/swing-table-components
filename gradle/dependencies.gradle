@@ -15,8 +15,6 @@ dependencies {
     implementation libs.jobj.reflect
     testImplementation libs.test.object
     testImplementation libs.awt.extensions
-    testImplementation libs.silly.io
-    testImplementation libs.file.worker
     testImplementation libs.throwable
     // Note: use of bundles...
     testImplementation libs.bundles.unit.testing
