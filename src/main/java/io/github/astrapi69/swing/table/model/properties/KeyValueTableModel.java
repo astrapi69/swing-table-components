@@ -24,14 +24,20 @@
  */
 package io.github.astrapi69.swing.table.model.properties;
 
-import io.github.astrapi69.collection.pair.KeyValuePair;
+import java.util.Map;
+
 import io.github.astrapi69.swing.table.model.BaseTableModel;
 import io.github.astrapi69.swing.table.model.TableColumnsModel;
 
 /**
- * The class {@link KeyValueTableModel} that lists key value pairs.
+ * The class {@link KeyValueTableModel} that lists key value pairs, each row a {@link Map.Entry}.
+ *
+ * @param <K>
+ *            the type of the keys
+ * @param <V>
+ *            the type of the values
  */
-public class KeyValueTableModel<K, V> extends BaseTableModel<KeyValuePair<K, V>>
+public class KeyValueTableModel<K, V> extends BaseTableModel<Map.Entry<K, V>>
 {
 
 	/** The Constant serialVersionUID. */
@@ -64,7 +70,7 @@ public class KeyValueTableModel<K, V> extends BaseTableModel<KeyValuePair<K, V>>
 	@Override
 	public Object getValueAt(final int rowIndex, final int columnIndex)
 	{
-		final KeyValuePair<K, V> row = getData().get(rowIndex);
+		final Map.Entry<K, V> row = getData().get(rowIndex);
 		switch (columnIndex)
 		{
 			case 0 :

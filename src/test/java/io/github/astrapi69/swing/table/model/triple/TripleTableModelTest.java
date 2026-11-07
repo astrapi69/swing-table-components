@@ -29,7 +29,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import io.github.astrapi69.collection.pair.Triple;
 
 /**
  * The unit test class for the class {@link TripleTableModel}
@@ -51,8 +50,7 @@ public class TripleTableModelTest
 	public void testGetValueAt(final int column, final String expected)
 	{
 		final TripleTableModel<String, String, String> model = new TripleTableModel<>();
-		model.add(Triple.<String, String, String> builder().left("left").middle("middle")
-			.right("right").build());
+		model.add(new Triple<>("left", "middle", "right"));
 		assertEquals(expected, model.getValueAt(0, column));
 	}
 }

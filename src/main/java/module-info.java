@@ -6,7 +6,6 @@ module swing.table.components.main
 	requires io.github.astrapisixtynine.silly.collection;
 	requires io.github.astrapisixtynine.menu.action;
 	requires java.logging;
-	requires io.github.astrapisixtynine.silly.bean;
 	requires org.apache.commons.lang3;
 	requires io.github.astrapisixtynine.jobj.reflect;
 	requires model.data;

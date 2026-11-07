@@ -26,11 +26,11 @@ package io.github.astrapi69.swing.table.model.properties;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-
-import io.github.astrapi69.collection.pair.KeyValuePair;
 
 /**
  * The unit test class for the classes {@link KeyValueTableModel} and
@@ -53,7 +53,7 @@ public class KeyValueTableModelTest
 	public void testGetValueAt(final int column, final String expected)
 	{
 		final KeyValueTableModel<String, String> model = new KeyValueTableModel<>();
-		model.add(KeyValuePair.<String, String> builder().key("foo").value("bar").build());
+		model.add(Map.entry("foo", "bar"));
 		assertEquals(expected, model.getValueAt(0, column));
 	}
 
@@ -65,7 +65,7 @@ public class KeyValueTableModelTest
 	public void testStringKeyValueTableModel()
 	{
 		final StringKeyValueTableModel model = new StringKeyValueTableModel();
-		model.add(KeyValuePair.<String, String> builder().key("foo").value("bar").build());
+		model.add(Map.entry("foo", "bar"));
 		assertEquals("foo", model.getValueAt(0, 0));
 		assertEquals("bar", model.getValueAt(0, 1));
 		assertEquals(String.class, model.getColumnClass(0));

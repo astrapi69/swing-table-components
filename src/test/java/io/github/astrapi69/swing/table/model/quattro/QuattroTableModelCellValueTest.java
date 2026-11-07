@@ -29,7 +29,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import io.github.astrapi69.collection.pair.Quattro;
 
 /**
  * The unit test class for the cell values of the class {@link QuattroTableModel}
@@ -52,8 +51,7 @@ public class QuattroTableModelCellValueTest
 	public void testGetValueAt(final int column, final String expected)
 	{
 		final QuattroTableModel<String, String, String, String> model = new QuattroTableModel<>();
-		model.add(Quattro.<String, String, String, String> builder().topLeft("top left")
-			.topRight("top right").bottomLeft("bottom left").bottomRight("bottom right").build());
+		model.add(new Quattro<>("top left", "top right", "bottom left", "bottom right"));
 		assertEquals(expected, model.getValueAt(0, column));
 	}
 }
