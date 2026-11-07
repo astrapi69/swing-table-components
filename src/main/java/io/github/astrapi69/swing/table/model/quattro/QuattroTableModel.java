@@ -45,7 +45,7 @@ public class QuattroTableModel<TL, TR, BL, BR> extends BaseTableModel<Quattro<TL
 	{
 		this(TableColumnsModel.builder()
 			.columnNames(new String[] { "Top Left", "Top Right", "Bottom Left", "Bottom Right" })
-			.canEdit(new boolean[] { true, true, true }).columnClasses(
+			.canEdit(new boolean[] { true, true, true, true }).columnClasses(
 				new Class<?>[] { Object.class, Object.class, Object.class, Object.class })
 			.build());
 	}

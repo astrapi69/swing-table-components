@@ -16,5 +16,9 @@ spotless {
         // removes any unused imports
         removeUnusedImports()
         eclipse("4.21").configFile("src/test/resources/spotless/alpharo-formatter.xml")
+        // Enforces the MIT header, as jobj-reflect does (astrapi69/jobj-reflect#13): the release 3.2
+        // migration removed the license plugin and left no step that checks it, so a missing or changed
+        // header went unnoticed (#20). The text is the header the sources carry.
+        licenseHeaderFile(rootProject.file("src/main/resources/license-header.txt"))
     }
 }
