@@ -25,15 +25,18 @@
 package io.github.astrapi69.swing.table;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.lang.module.Configuration;
+import java.lang.module.ModuleDescriptor;
 import java.lang.module.ModuleFinder;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 
@@ -96,6 +99,32 @@ public class ModulePathTest
 				ModuleFinder.of(), Set.of(MODULE_NAME)),
 			"the module does not resolve on the module path");
 		assertTrue(configuration.findModule(MODULE_NAME).isPresent());
+	}
+
+	/**
+	 * Test that the module of the built jar exports exactly the packages of the public API, so a
+	 * package that leaves the API or joins it shows here (#33)
+	 */
+	@Test
+	public void testExportsThePackagesOfThePublicApi()
+	{
+		final String moduleJar = System.getProperty(MODULE_JAR_PROPERTY);
+		assertNotNull(moduleJar, "the system property " + MODULE_JAR_PROPERTY + " is not set");
+		final Set<String> exported = ModuleFinder.of(Path.of(moduleJar)).find(MODULE_NAME)
+			.orElseThrow().descriptor().exports().stream().map(ModuleDescriptor.Exports::source)
+			.collect(Collectors.toSet());
+		assertEquals(Set.of("io.github.astrapi69.swing.table",
+			"io.github.astrapi69.swing.table.editor", "io.github.astrapi69.swing.table.model",
+			"io.github.astrapi69.swing.table.model.dynamic",
+			"io.github.astrapi69.swing.table.model.properties",
+			"io.github.astrapi69.swing.table.model.quattro",
+			"io.github.astrapi69.swing.table.model.suffle",
+			"io.github.astrapi69.swing.table.model.suffle.action",
+			"io.github.astrapi69.swing.table.model.thread",
+			"io.github.astrapi69.swing.table.model.triple", "io.github.astrapi69.swing.table.panel",
+			"io.github.astrapi69.swing.table.panel.shuffle",
+			"io.github.astrapi69.swing.table.renderer", "io.github.astrapi69.swing.table.shuffle"),
+			exported);
 	}
 
 }
