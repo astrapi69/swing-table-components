@@ -8,17 +8,27 @@ task sourcesJar(type: Jar) {
 task javadocJar(type: Jar) {
     from javadoc
     archiveClassifier.set("javadoc")
-    javadoc {
-        failOnError = false
-    }
 }
 
+// A javadoc warning fails the build (RL-113, as astrapi69/silly-collection#96 and astrapi69/file-worker#153): -Werror
+// turns each warning into an error, failOnError lets that error fail the task, and check depends on javadoc, so that
+// ./gradlew build and CI run it. A count of warnings by a text search depends on the tool's language; failing on them
+// does not.
 javadoc {
-    if(JavaVersion.current().isJava9Compatible()) {
+    failOnError = true
+    options.addBooleanOption("Werror", true)
+    if (JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption("html5", true)
     }
-    failOnError = false
+    // The standard doclet writes its text in the locale of the javadoc JVM, so a build on a machine in German wrote
+    // another javadoc jar than CI (lang="de" and "JavaScript ist im Browser deaktiviert." in all 46 pages, measured
+    // on dabbe1b); -locale alone sets only the lang attribute (RL-115, as astrapi69/silly-collection#99 and
+    // astrapi69/file-worker#153)
+    options.locale = "en"
+    options.jFlags("-Duser.language=en", "-Duser.country=US")
 }
+
+check.dependsOn javadoc
 
 publishing {
     publications {

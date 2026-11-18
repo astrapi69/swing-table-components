@@ -48,10 +48,18 @@ import lombok.NonNull;
 public class GenericJTable<T> extends JTable
 {
 
-	/** The generic table model. */
+	/**
+	 * The generic table model.
+	 *
+	 * @return the generic table model
+	 */
 	private final GenericTableModel<T> genericTableModel;
 
-	/** The sorter. */
+	/**
+	 * The sorter.
+	 *
+	 * @return the sorter of the rows
+	 */
 	private final TableRowSorter<GenericTableModel<T>> sorter;
 
 	/**
