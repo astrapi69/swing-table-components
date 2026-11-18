@@ -43,14 +43,30 @@ public class TableCellButtonRenderer extends JButton implements TableCellRendere
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The background of a cell that is not selected, the look and feel one when null. */
 	private Color backround;
+
+	/** The foreground of a cell that is not selected, the one of the table when null. */
 	private Color foreground;
 
+	/**
+	 * Instantiates a new {@link TableCellButtonRenderer} with the foreground of the table and the
+	 * background of a button in the look and feel
+	 */
 	public TableCellButtonRenderer()
 	{
 		this(null, null);
 	}
 
+	/**
+	 * Instantiates a new {@link TableCellButtonRenderer} with the given colors for a cell that is
+	 * not selected
+	 *
+	 * @param foreground
+	 *            the foreground, or null for the one of the table
+	 * @param backround
+	 *            the background, or null for the one of a button in the look and feel
+	 */
 	public TableCellButtonRenderer(final Color foreground, final Color backround)
 	{
 		setOpaque(true);
@@ -97,6 +113,14 @@ public class TableCellButtonRenderer extends JButton implements TableCellRendere
 		return this;
 	}
 
+	/**
+	 * Gives the background of a cell that is not selected: the one given to the constructor, or
+	 * else the background of a button in the look and feel, which it keeps from then on
+	 *
+	 * @param table
+	 *            the table of the cell
+	 * @return the background
+	 */
 	protected Color newBackround(final JTable table)
 	{
 		if (this.backround == null)
@@ -106,6 +130,14 @@ public class TableCellButtonRenderer extends JButton implements TableCellRendere
 		return this.backround;
 	}
 
+	/**
+	 * Gives the foreground of a cell that is not selected: the one given to the constructor, or
+	 * else the foreground of the given table, which it keeps from then on
+	 *
+	 * @param table
+	 *            the table of the cell
+	 * @return the foreground
+	 */
 	protected Color newForeground(final JTable table)
 	{
 		if (this.foreground == null)
@@ -115,11 +147,25 @@ public class TableCellButtonRenderer extends JButton implements TableCellRendere
 		return this.foreground;
 	}
 
+	/**
+	 * Gives the background of a selected cell, the selection background of the given table
+	 *
+	 * @param table
+	 *            the table of the cell
+	 * @return the background
+	 */
 	protected Color newSelectionBackround(final JTable table)
 	{
 		return table.getSelectionBackground();
 	}
 
+	/**
+	 * Gives the foreground of a selected cell, the selection foreground of the given table
+	 *
+	 * @param table
+	 *            the table of the cell
+	 * @return the foreground
+	 */
 	protected Color newSelectionForeground(final JTable table)
 	{
 		return table.getSelectionForeground();

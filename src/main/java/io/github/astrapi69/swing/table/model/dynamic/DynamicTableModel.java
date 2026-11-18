@@ -47,7 +47,11 @@ public abstract class DynamicTableModel<T> extends GenericTableModel<T>
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The columns model. */
+	/**
+	 * The columns model.
+	 *
+	 * @return the columns model
+	 */
 	@Getter
 	private final DynamicTableColumnsModel<T> columnsModel;
 
