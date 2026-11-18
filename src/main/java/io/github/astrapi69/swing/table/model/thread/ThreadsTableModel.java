@@ -42,10 +42,17 @@ public class ThreadsTableModel extends BaseTableModel<ThreadDataBean>
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+
+	/** The lock that guards the thread data between the update thread and the event thread. */
 	private final Object lock;
+
+	/** The thread data the update thread collected last. */
 	private List<ThreadDataBean> currentThreadData;
+
+	/** The flag that keeps the update thread running. */
 	private volatile boolean running;
 
+	/** The daemon thread that collects the thread data once a second. */
 	private Thread updateRunningThreads;
 
 	/**
@@ -101,6 +108,9 @@ public class ThreadsTableModel extends BaseTableModel<ThreadDataBean>
 		}
 	}
 
+	/**
+	 * Stops the update of the thread data: the update thread ends and the rows stay as they are
+	 */
 	public void interrupt()
 	{
 		running = false;
@@ -115,6 +125,10 @@ public class ThreadsTableModel extends BaseTableModel<ThreadDataBean>
 		}
 	}
 
+	/**
+	 * Callback method invoked by the constructor: starts the daemon thread that collects the thread
+	 * data once a second and sets it as the rows of this model
+	 */
 	protected void onInitialize()
 	{
 		running = true;
