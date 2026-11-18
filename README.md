@@ -98,6 +98,31 @@ Release version numbers will be incremented in the following format:
 
 For detailed information on versioning you can visit the [wiki page](https://github.com/lightblueseas/mvn-parent-projects/wiki/Semantic-Versioning).
 
+## Releasing
+
+What a release consists of, in the order it is run:
+
+1. **One pull request** with the CHANGELOG entry and `projectVersion` without `-SNAPSHOT`
+   (`docs: changelog for X.Y, and the version that carries it`), the full build green on it, and
+   `scripts/check-reproducible.sh` on the JDK `.sdkmanrc` names reporting the five artifacts
+   identical.
+2. **Tag the merge commit** with `make tag-release CONFIRM=yes`, which refuses a `-SNAPSHOT`
+   version and runs `./gradlew tagRelease`, naming the tag `RELEASE-X.Y`, and push the tag.
+   `publish.yml` uploads to the Central Portal, where the maintainer releases it. A pushed tag is
+   never moved or deleted; a failed run is fixed on the branch and re-run.
+3. **Verify on Central**: the jar, pom, `.module`, `-sources.jar` and `-javadoc.jar`, their sha1, and
+   `gpg --verify` on the `.asc`.
+4. **GitHub release** from the CHANGELOG entry.
+5. **`main` follows the release** by a merge of the tag: on `main`,
+   `git merge --no-ff "RELEASE-X.Y^{commit}" -m "Merge tag RELEASE-X.Y into main"`. Before
+   `main` is pushed, `git diff RELEASE-X.Y main` has to be empty; if it is not, nothing is
+   pushed. Never a force push: `main` is always the latest release, nothing else.
+6. **Open the next cycle**: `projectVersion` to the next `-SNAPSHOT`.
+7. **Bump drafts in the consumers** (RL-127): in every repository of the family that declares
+   swing-table-components, a draft pull request that raises it to the release and shows the build
+   before and after it, so that a break shows the day the release appears; each is merged by RL-065,
+   a runtime major in a session of its own.
+
 ## Want to Help and improve it? ###
 
 The source code for swing-table-components are on GitHub. Please feel free to fork and send pull requests!
