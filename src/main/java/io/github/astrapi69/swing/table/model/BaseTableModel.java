@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.logging.Level;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.java.Log;
 
@@ -39,7 +38,6 @@ import lombok.extern.java.Log;
  * @param <T>
  *            the generic type of the model
  */
-@NoArgsConstructor
 @Log
 public abstract class BaseTableModel<T> extends GenericTableModel<T>
 {
@@ -47,10 +45,24 @@ public abstract class BaseTableModel<T> extends GenericTableModel<T>
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The columns model. */
+	/**
+	 * The columns model.
+	 *
+	 * @param columnsModel
+	 *            the columns model
+	 * @return the columns model
+	 */
 	@Getter
 	@Setter
 	private TableColumnsModel columnsModel;
+
+	/**
+	 * Instantiates a new {@link BaseTableModel} without rows and without a columns model, which is
+	 * set afterwards with {@link #setColumnsModel(TableColumnsModel)}
+	 */
+	public BaseTableModel()
+	{
+	}
 
 	/**
 	 * Instantiates a new {@link BaseTableModel}.

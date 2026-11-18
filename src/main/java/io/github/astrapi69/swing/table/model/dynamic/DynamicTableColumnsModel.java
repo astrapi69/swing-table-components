@@ -25,30 +25,65 @@
 package io.github.astrapi69.swing.table.model.dynamic;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.Objects;
 
 import org.apache.commons.lang3.StringUtils;
 
 import io.github.astrapi69.collection.list.ListFactory;
 import io.github.astrapi69.reflection.ReflectionExtensions;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NonNull;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * The class {@link DynamicTableColumnsModel} encapsulates the column data for a table model that
  * can resolve the columns dynamically from the given class type
+ *
+ * The accessors and {@link #toString()} come from Lombok; {@link #equals(Object)},
+ * {@link #hashCode()} and {@link #canEqual(Object)} are written out from what Lombok's
+ * {@code @Data} generated, so that {@link #canEqual(Object)} carries its Javadoc
+ *
+ * @param <T>
+ *            the type whose declared fields give the columns
  */
-@Data
+@Getter
+@Setter
+@ToString
 public class DynamicTableColumnsModel<T>
 {
 
-	/** The class type. */
+	/**
+	 * The class type.
+	 *
+	 * @return the class type whose declared fields give the columns
+	 */
 	@NonNull
 	private final Class<T> type;
-	/** The flag for the column if they can be edited. */
+	/**
+	 * The flag for the column if they can be edited.
+	 *
+	 * @param canEdit
+	 *            the flag for the column if they can be edited
+	 * @return the flag for the column if they can be edited
+	 */
 	private boolean[] canEdit;
-	/** The column classes. */
+	/**
+	 * The column classes.
+	 *
+	 * @param columnClasses
+	 *            the column classes
+	 * @return the column classes
+	 */
 	private Class<?>[] columnClasses;
-	/** The column names. */
+	/**
+	 * The column names.
+	 *
+	 * @param columnNames
+	 *            the column names
+	 * @return the column names
+	 */
 	private String[] columnNames;
 
 	/**
@@ -114,6 +149,59 @@ public class DynamicTableColumnsModel<T>
 		{
 			columnNames[i] = StringUtils.capitalize(columnNames[i]);
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof DynamicTableColumnsModel))
+			return false;
+		final DynamicTableColumnsModel<?> other = (DynamicTableColumnsModel<?>)o;
+		if (!other.canEqual(this))
+			return false;
+		if (!Objects.equals(this.getType(), other.getType()))
+			return false;
+		if (!Arrays.equals(this.getCanEdit(), other.getCanEdit()))
+			return false;
+		if (!Arrays.deepEquals(this.getColumnClasses(), other.getColumnClasses()))
+			return false;
+		if (!Arrays.deepEquals(this.getColumnNames(), other.getColumnNames()))
+			return false;
+		return true;
+	}
+
+	/**
+	 * Tells whether the given object may be equal to this one: a subclass that adds state overrides
+	 * it, so that {@link #equals(Object)} stays symmetric
+	 *
+	 * @param other
+	 *            the object to compare with
+	 * @return true if the given object is a {@link DynamicTableColumnsModel}
+	 */
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof DynamicTableColumnsModel;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object type = this.getType();
+		result = result * PRIME + (type == null ? 43 : type.hashCode());
+		result = result * PRIME + Arrays.hashCode(this.getCanEdit());
+		result = result * PRIME + Arrays.deepHashCode(this.getColumnClasses());
+		result = result * PRIME + Arrays.deepHashCode(this.getColumnNames());
+		return result;
 	}
 
 }

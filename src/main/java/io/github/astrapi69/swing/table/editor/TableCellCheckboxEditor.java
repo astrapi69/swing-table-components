@@ -45,19 +45,49 @@ public class TableCellCheckboxEditor extends DefaultCellEditor
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The button. */
+	/**
+	 * The button.
+	 *
+	 * @param button
+	 *            the check box that edits the cell
+	 * @return the check box that edits the cell
+	 */
 	private JCheckBox button;
 
-	/** The flag if the button was clicked. */
+	/**
+	 * The flag if the button was clicked.
+	 *
+	 * @param clicked
+	 *            the flag if the button was clicked
+	 * @return the flag if the button was clicked
+	 */
 	private boolean clicked;
 
-	/** The column index. */
+	/**
+	 * The column index.
+	 *
+	 * @param column
+	 *            the column index of the edited cell
+	 * @return the column index of the edited cell
+	 */
 	private int column;
 
-	/** The row index. */
+	/**
+	 * The row index.
+	 *
+	 * @param row
+	 *            the row index of the edited cell
+	 * @return the row index of the edited cell
+	 */
 	private int row;
 
-	/** The value. */
+	/**
+	 * The value.
+	 *
+	 * @param value
+	 *            the value of the edited cell
+	 * @return the value of the edited cell
+	 */
 	private Object value;
 
 	/**

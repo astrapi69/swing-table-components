@@ -31,6 +31,14 @@ public class TableCellButtonRendererFactory
 {
 
 	/**
+	 * Instantiates a new {@link TableCellButtonRendererFactory}; its factory method is static, so
+	 * an instance is not needed
+	 */
+	public TableCellButtonRendererFactory()
+	{
+	}
+
+	/**
 	 * Factory method for creating the new {@link TableCellButtonRenderer} with the given string
 	 *
 	 * @param text
